@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <header>
+    <div class="header">
       <div class="title-wrapper">
         <img src="./assets/logo.svg" alt="logo" />
         <h1 class="title">კლინიკა</h1>
@@ -31,7 +31,7 @@ import { Component } from '@angular/core';
       <button class="language">
         <span>ENG</span>
       </button>
-    </header>
+    </div>
   `,
   styleUrl: './header.component.css',
 })
