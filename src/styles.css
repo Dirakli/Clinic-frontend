@@ -1,5 +1,4 @@
-/* Global styles */
-@import url("https://free.bboxtype.com/embedfonts/?family=FiraGO:200,500,700");
+@import url("https://free.bboxtype.com/embedfonts/?family=FiraGO:200,400,500,700");
 
 * {
   margin: 0;
@@ -33,22 +32,18 @@ form {
 }
 
 body {
-  background-color: #f4f4f4;
-  color: #333;
   line-height: 1.6;
 }
 
-/* Links styling */
 a {
   color: #007bff;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-/* Headings styling */
 h1,
 h2,
 h3,
@@ -58,35 +53,13 @@ h6 {
   font-weight: 600;
 }
 
-/* Container for layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Flexbox utility */
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Global button styles */
 button {
-  background-color: #007bff;
-  color: white;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 4px;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Global form styling */
 input,
 select,
 textarea {
@@ -102,4 +75,10 @@ select:focus,
 textarea:focus {
   outline: none;
   border-color: #007bff;
+}
+
+a,
+button,
+link {
+  cursor: pointer;
 }

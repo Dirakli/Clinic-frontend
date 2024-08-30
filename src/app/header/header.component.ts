@@ -24,9 +24,13 @@ import { Component } from '@angular/core';
         </ul>
       </nav>
       <div class="autorization">
-        <span>ავოტრიზაცია/</span>
-        <span>რეგისტრაცია</span>
+        <button>ავოტრიზაცია</button>
+        <span> / </span>
+        <button>რეგისტრაცია</button>
       </div>
+      <button class="language">
+        <span>ENG</span>
+      </button>
     </header>
   `,
   styleUrl: './header.component.css',
