@@ -1,0 +1,103 @@
+.container {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  background-color: #ecf2f8;
+  padding-left: 150px;
+}
+
+.box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-location {
+  margin-left: 40px;
+}
+
+.phone-wrapper,
+.location-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.phone-number,
+.location {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  letter-spacing: 0.07em;
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  margin-left: 20px;
+}
+
+.search-form {
+  display: flex;
+  margin-left: 97px;
+}
+
+.input-byname {
+  width: 480px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  display: flex;
+  padding-left: 30px;
+  align-items: center;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #0533544d;
+}
+
+.input-byname:active {
+  border: 1px solid #18a4e180;
+}
+
+.input-byposition:active {
+  border: 1px solid #18a4e180;
+}
+
+.input-byposition::placeholder,
+.input-byname::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #0533544d;
+}
+
+.input-byposition {
+  width: 480px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  display: flex;
+  padding-left: 30px;
+  align-items: center;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #0533544d;
+  margin-left: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #053354;
+  margin-left: 20px;
+}
