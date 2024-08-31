@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
   template: `
     <div class="header">
       <div class="title-wrapper">
@@ -26,13 +25,19 @@ import { Component } from '@angular/core';
       <div class="autorization">
         <button>ავოტრიზაცია</button>
         <span> / </span>
-        <button>რეგისტრაცია</button>
+        <button (click)="showRegistration()">რეგისტრაცია</button>
       </div>
       <button class="language">
         <span>ENG</span>
       </button>
     </div>
   `,
-  styleUrl: './header.component.css',
+  styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  @Output() showRegistrationChange = new EventEmitter<boolean>();
+
+  showRegistration() {
+    this.showRegistrationChange.emit(true);
+  }
+}
