@@ -1,7 +1,12 @@
 <div>
   <header>
-    <app-header></app-header>
+    <app-header
+      (showRegistrationChange)="showRegistration = $event"
+    ></app-header>
     <app-searchbar></app-searchbar>
+    <app-changing-section
+      [showRegistration]="showRegistration"
+    ></app-changing-section>
     <app-footer></app-footer>
   </header>
 </div>
