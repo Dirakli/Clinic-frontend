@@ -1,13 +1,15 @@
 .container {
-  height: 300px;
   display: flex;
   flex-direction: column;
   height: 335px;
+  width: 100%;
+  background-color: #ecf2f84d;
 }
 
 .blue-container {
   background-color: #053354;
   display: flex;
+  width: 100%;
   align-items: flex-start;
   height: 300px;
 }
@@ -27,6 +29,7 @@
   align-items: center;
   margin-top: 63px;
   margin-left: 146px;
+  position: relative;
 }
 
 .title {
@@ -36,14 +39,17 @@
   letter-spacing: 0.07em;
   color: white;
   font-family: "FiraGO", sans-serif;
+  position: absolute;
+  left: 70px;
 }
 
 .title-list {
   display: flex;
   list-style-type: none;
   font-family: "firago", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
+  justify-content: space-between;
   letter-spacing: 0.07em;
   list-style: 19.2px;
   color: white;
@@ -52,13 +58,43 @@
 .navigation-list-wrapper {
   margin-top: 55px;
   margin-left: 246px;
-}
-
-.title-list li:not(:first-child) {
-  margin-left: 262px;
+  width: 1210px;
 }
 
 .line {
   border-bottom: 1px solid #ecf2f84d;
   margin-top: 20px;
+}
+
+.navigation-many {
+  display: flex;
+  list-style-type: none;
+}
+
+.navigation-many ul {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.navigation-many ul:nth-child(2) {
+  margin-left: 205px;
+}
+
+.navigation-many ul:nth-child(3) {
+  margin-left: 295px;
+}
+
+.navigation-many ul:nth-child(4) {
+  margin-left: 145px;
+}
+
+.navigation-many ul li {
+  font-family: "firago", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.07em;
+  text-align: left;
+  color: white;
+  cursor: pointer;
 }

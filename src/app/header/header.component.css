@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 
 .title {
@@ -24,6 +25,8 @@
   letter-spacing: 0.07em;
   color: #ff2c52;
   font-family: "FiraGO", sans-serif;
+  position: absolute;
+  left: 70px;
 }
 
 .nav-list {
@@ -46,7 +49,7 @@ a:hover {
 }
 
 nav {
-  margin-left: 149px;
+  margin-left: 268px;
   border-bottom: 1px solid #ecf2f8;
   height: 66px;
   display: flex;
