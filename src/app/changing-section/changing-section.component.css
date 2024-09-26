@@ -1,0 +1,42 @@
+.wrapper {
+  height: 600px;
+  background-image: url(/assets/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.location-wrapper {
+  background-color: white;
+  border-radius: 50px;
+  width: 370px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  margin-top: 52px;
+}
+
+.location {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26.4px;
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  margin-left: 12px;
+}
+
+p {
+  font-family: "FiraGO", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 57.6px;
+  color: white;
+}
+
+.choose-clinics {
+  width: 1087px;
+  border-radius: 0 50px 50px 0;
+  background-color: #05335440;
+  height: 600px;
+  padding-left: 150px;
+  padding-top: 184px;
+}

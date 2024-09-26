@@ -2,10 +2,12 @@
   <header>
     <app-header
       (showRegistrationChange)="showRegistration = $event"
+      (showAuthenticationChange)="showAuthentication = $event"
     ></app-header>
     <app-searchbar></app-searchbar>
     <app-changing-section
       [showRegistration]="showRegistration"
+      [showAuthentication]="showAuthentication"
     ></app-changing-section>
     <app-footer></app-footer>
   </header>

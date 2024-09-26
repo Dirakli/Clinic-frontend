@@ -21,8 +21,13 @@ import { ChangingSectionComponent } from './changing-section/changing-section.co
 export class AppComponent {
   title = 'clinic-frontend';
   showRegistration = false;
+  showAuthentication = false;
 
   onRegistration(isRegistrationShown: boolean) {
     this.showRegistration = isRegistrationShown;
+  }
+
+  onAuthentication(isAuthenticationShown: boolean) {
+    this.showAuthentication = isAuthenticationShown;
   }
 }

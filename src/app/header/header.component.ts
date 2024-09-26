@@ -23,7 +23,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
         </ul>
       </nav>
       <div class="autorization">
-        <button>ავოტრიზაცია</button>
+        <button (click)="showAuthentication()">ავოტრიზაცია</button>
         <span> / </span>
         <button (click)="showRegistration()">რეგისტრაცია</button>
       </div>
@@ -36,8 +36,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   @Output() showRegistrationChange = new EventEmitter<boolean>();
-
+  @Output() showAuthenticationChange = new EventEmitter<boolean>();
   showRegistration() {
     this.showRegistrationChange.emit(true);
+  }
+
+  showAuthentication() {
+    this.showAuthenticationChange.emit(true);
   }
 }
