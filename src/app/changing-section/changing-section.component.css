@@ -40,3 +40,117 @@ p {
   padding-left: 150px;
   padding-top: 184px;
 }
+
+.list-card-wrapper {
+  display: flex;
+  padding-left: 150px;
+}
+
+.list {
+  width: 350px;
+  margin-top: 73px;
+  margin-bottom: 145px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 50px 0px #0533540d;
+}
+
+.cards {
+  width: 1210px;
+  height: 840px;
+  border: 1px solid red;
+  margin-left: 60px;
+  margin-top: 73px;
+  margin-bottom: 105px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 17px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+li:hover {
+  background-color: #ecf2f880;
+}
+
+.name {
+  margin-left: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+}
+
+.count:hover {
+  color: #18a4e1;
+}
+
+.count {
+  color: #0533544d;
+  margin-left: 40px;
+}
+
+.line {
+  width: 250px;
+  height: 1px;
+  background-color: #ecf2f8;
+  margin-top: 15px;
+}
+
+.line-bottom {
+  width: 250px;
+  height: 1px;
+  background-color: #ecf2f8;
+}
+
+.categories {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  margin-top: 30px;
+}
+
+.categories-line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-more {
+  margin-top: 13px;
+  cursor: pointer;
+}
+
+.show {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #18a4e1;
+  font-family: "FiraGO", sans-serif;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+}
+
+.show-more-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 43px;
+  margin-bottom: 30px;
+}
