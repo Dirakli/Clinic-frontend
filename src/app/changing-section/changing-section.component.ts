@@ -2,7 +2,8 @@ import { Component, Input } from '@angular/core';
 import { RegistrationComponent } from '../registration/registration.component';
 import { NgIf, NgStyle, NgClass, NgFor } from '@angular/common';
 import { AuthenticationComponent } from '../authentication/authentication.component';
-
+import { CardsComponent } from '../cards/cards.component';
+import { listComponent } from '../list/list.component';
 @Component({
   selector: 'app-changing-section',
   standalone: true,
@@ -13,6 +14,8 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
     NgStyle,
     NgClass,
     NgFor,
+    CardsComponent,
+    listComponent,
   ],
   template: `
     <div *ngIf="showRegistration">
@@ -40,59 +43,9 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
         </div>
       </div>
     </div>
-    <div class="list-card-wrapper">
-      <div class="list">
-        <div class="categories-line-container">
-          <h1 class="categories">კატეგორიები</h1>
-          <div class="line"></div>
-        </div>
-        <ul class="unordered-list">
-          <li *ngFor="let item of categories" class="list-item">
-            <span class="count">({{ item.count }})</span>
-
-            <span class="name">{{ item.name }}</span>
-          </li>
-        </ul>
-        <div class="show-more-container">
-          <div class="line-bottom"></div>
-          <div class="show-more">
-            <span class="show"> მეტის ნახვა </span
-            ><img class="arrow" src="/assets/blue-arrow.svg" alt="arrow" />
-          </div>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <div class="views-pin-wrapper">
-            <div class="views">
-              <img src="/assets/view.svg" alt="view icon" />129 371
-            </div>
-            <img src="/assets/pin.svg" alt="pin icon" />
-          </div>
-          <img
-            class="avatar"
-            src="/assets/profile-picture.svg"
-            alt="profile picture"
-          />
-          <h3 class="doctor-name">გიორგი ხორავა</h3>
-          <p class="position">კარდიოლოგი / არითმოლოგი</p>
-          <div class="stars">
-            <img
-              *ngFor="let star of starsArray"
-              src="/assets/star.svg"
-              alt="star icon"
-            />
-          </div>
-          <button class="visits">
-            მიღებაზე ჩაწერა
-            <img
-              class="right-arrow"
-              src="/assets/right-arrow-blue.svg"
-              alt=""
-            />
-          </button>
-        </div>
-      </div>
+    <div *ngIf="!showRegistration" class="list-card-wrapper">
+      <app-list></app-list>
+      <app-cards></app-cards>
     </div>
   `,
   styleUrls: ['./changing-section.component.css'],
@@ -100,23 +53,4 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
 export class ChangingSectionComponent {
   @Input() showRegistration = false;
   @Input() showAuthentication = false;
-
-  categories = [
-    { name: 'ანდროლოგი', count: 14 },
-    { name: 'ანესთეზიოლოგი', count: 61 },
-    { name: 'კარდიოლოგი', count: 467 },
-    { name: 'კოსმეტოლოგი', count: 43 },
-    { name: 'ლაბორანტი', count: 107 },
-    { name: 'ოჯახის ექიმი', count: 238 },
-    { name: 'პედიატრი', count: 366 },
-    { name: 'ტოქსიკოლოგი', count: 8 },
-    { name: 'ტრანსფუზილოგი', count: 15 },
-    { name: 'გინეკოლოგი', count: 171 },
-    { name: 'დერმატოლოგი', count: 68 },
-    { name: 'ენდოკრინოლოგი', count: 32 },
-    { name: 'გასტროენტეროლოგი', count: 56 },
-    { name: 'თერაპევტი', count: 114 },
-  ];
-
-  starsArray = new Array(5);
 }
