@@ -45,3 +45,13 @@ p {
   display: flex;
   padding-left: 150px;
 }
+
+.see-details {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21.6px;
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  border: 1px solid #18a4e1;
+  width: 80px;
+}

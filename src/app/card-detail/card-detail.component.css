@@ -1,0 +1,181 @@
+.wrapper {
+  width: 1208px;
+  height: 250px;
+  border: 1px solid #ecf2f8;
+  box-shadow: 0px 4px 30px 0px #0533540d;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 73px;
+  margin-left: 62px;
+}
+
+.info-wrapper {
+  margin-left: 40px;
+}
+
+.stars {
+  margin-top: 16px;
+}
+
+.vertical-line {
+  height: 140px;
+  width: 1px;
+  background-color: #ecf2f8;
+  margin-left: 36px;
+}
+
+.descriptions {
+  margin-left: 51px;
+}
+
+span {
+  color: #18a4e1;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+}
+
+.position-two {
+  margin-top: 17px;
+}
+
+.position-three {
+  margin-top: 23px;
+}
+
+.position-one,
+.position-two,
+.position-three {
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #053354;
+}
+
+.avatar {
+  margin-left: 48px;
+}
+
+.calendar {
+  width: 1111px;
+  height: 700px;
+  border: 1px solid #ecf2f8;
+  margin-top: 67px;
+  margin-left: 76px;
+}
+
+.arrows-button {
+  display: flex;
+  margin-left: 43px;
+}
+
+.year-button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.leftarrow-button {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px 0px #0533540d;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightarrow-button {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px 0px #0533540d;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.months {
+  margin-left: 10px;
+  color: #18a4e1;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  border: 1px solid #18a4e14d;
+  border-radius: 50px;
+  width: 140px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.year {
+  color: #053354;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr); /* First column for time, 7 for weekdays */
+  grid-template-rows: 50px repeat(9, auto); /* First row for weekdays, 9 rows for hours */
+  gap: 10px;
+}
+
+.header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Empty top-left cell */
+.empty {
+  background-color: transparent;
+  border: none;
+}
+
+/* Time column with vertically stacked hours */
+.time-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time {
+  background-color: #e0e0e0;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+/* Time slots (cubes) for every hour/day combination */
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cube {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cube:hover {
+  background-color: #e6f7ff;
+}
