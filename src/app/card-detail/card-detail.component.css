@@ -62,9 +62,9 @@ span {
 .calendar {
   width: 1111px;
   height: 700px;
-  border: 1px solid #ecf2f8;
   margin-top: 67px;
   margin-left: 76px;
+  position: relative;
 }
 
 .arrows-button {
@@ -120,11 +120,12 @@ span {
   color: #053354;
 }
 
-.calendar {
+.calendar-box {
+  margin-top: 30px;
   display: grid;
-  grid-template-columns: 100px repeat(7, 1fr); /* First column for time, 7 for weekdays */
-  grid-template-rows: 50px repeat(9, auto); /* First row for weekdays, 9 rows for hours */
-  gap: 10px;
+  width: 830px;
+  grid-template-columns: 100px repeat(7, 1fr);
+  grid-template-rows: 50px repeat(9, auto);
 }
 
 .header {
@@ -137,45 +138,171 @@ span {
   text-align: center;
 }
 
-/* Empty top-left cell */
-.empty {
-  background-color: transparent;
-  border: none;
+.weekdays {
+  grid-column: 2 / span 7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ecf2f8;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 0 10px 0 0;
 }
 
-/* Time column with vertically stacked hours */
+.weekdays div {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+.weekdays div span {
+  color: #18a4e1;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+.empty {
+  background-color: #ecf2f8;
+  border: none;
+  border-radius: 10px 0 0 0;
+}
+
 .time-column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .time {
-  background-color: #e0e0e0;
-  border: 1px solid #ddd;
+  border: 1px solid #ecf2f8;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #053354;
 }
 
-/* Time slots (cubes) for every hour/day combination */
 .time-slots {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .cube {
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #ecf2f8;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #0533544d;
 }
 
 .cube:hover {
   background-color: #e6f7ff;
+}
+
+.plus {
+  color: green;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  font-family: "FiraGO", sans-serif;
+  margin-right: 5px;
+}
+
+.divider {
+  display: flex;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 51px;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf2f8;
+  border-radius: 50px;
+  border: none;
+  color: #18a4e1;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  width: 230px;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.dlt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff93a6;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  width: 170px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.left-click-arrow,
+.right-click-arrow {
+  font-size: 18px;
+  font-weight: 400;
+  color: #053354;
+  margin-left: 10px;
+  width: 21px;
+  height: 21px;
+  font-family: "FiraGO", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.right-click-arrow {
+  padding-right: 5px;
+}
+
+.left-click-arrow {
+  padding-left: 5px;
+}
+
+.left-click-arrow:hover,
+.right-click-arrow:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.inputDescription {
+  position: absolute;
+  width: 420px;
+  height: 263px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 30px 0px #05335433;
+  background-color: white;
 }

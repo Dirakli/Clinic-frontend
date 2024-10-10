@@ -1,9 +1,9 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-card-detail',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   template: `
     <div class="wrapper">
       <img class="avatar" [src]="selectedCard?.avatar" alt="profile picture" />
@@ -46,111 +46,135 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
           </button>
         </div>
       </div>
-      <div class="calendar">
-        <div class="header empty"></div>
+      <div class="divider">
+        <div class="calendar-box">
+          <div class="header empty">
+            <div class="left-click-arrow">
+              <img src="/assets/left.svg" alt="left arrow" />
+            </div>
+            <div class="right-click-arrow">
+              <img src="/assets/right.svg" alt="right arrow" />
+            </div>
+          </div>
 
-        <div class="header">Monday</div>
-        <div class="header">Tuesday</div>
-        <div class="header">Wednesday</div>
-        <div class="header">Thursday</div>
-        <div class="header">Friday</div>
-        <div class="header">Saturday</div>
-        <div class="header">Sunday</div>
+          <div class="weekdays">
+            <div><span>17</span> ( ორშ )</div>
+            <div><span>18</span> ( სამ )</div>
+            <div><span>19</span> ( ოთხ )</div>
+            <div><span>20</span> ( ხუთ )</div>
+            <div><span>21</span> ( პარ )</div>
+            <div><span>22</span> ( შაბ )</div>
+            <div><span>23</span> ( კვი )</div>
+          </div>
 
-        <div class="time-column">
-          <div class="time">8:00 AM</div>
-          <div class="time">9:00 AM</div>
-          <div class="time">10:00 AM</div>
-          <div class="time">11:00 AM</div>
-          <div class="time">12:00 PM</div>
-          <div class="time">1:00 PM</div>
-          <div class="time">2:00 PM</div>
-          <div class="time">3:00 PM</div>
-          <div class="time">4:00 PM</div>
+          <div class="time-column">
+            <div class="time">9:00 - 10:00</div>
+            <div class="time">10:00 - 11:00</div>
+            <div class="time">11:00 - 12:00</div>
+            <div class="time">12:00 - 13:00</div>
+            <div class="time">13:00 - 14:00</div>
+            <div class="time">14:00 - 15:00</div>
+            <div class="time">15:00 - 16:00</div>
+            <div class="time">16:00 - 17:00</div>
+            <div class="time">17:00 - 18:00</div>
+          </div>
+
+          <div class="time-slots">
+            <div (click)="onInput(!showInput)" class="cube">
+              <span class="plus">+</span> დაჯავშნა
+              <div class="inputDescription" *ngIf="!showInput">კუკურელია</div>
+            </div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+          </div>
+
+          <div class="time-slots">
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+          </div>
+
+          <div class="time-slots">
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+          </div>
+
+          <div class="time-slots">
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+          </div>
+
+          <div class="time-slots">
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+          </div>
+
+          <div class="time-slots">
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+          </div>
+
+          <div class="time-slots">
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+          </div>
         </div>
-
-        <div class="time-slots">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-
-        <div class="time-slots">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-
-        <div class="time-slots">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-
-        <div class="time-slots">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-
-        <div class="time-slots">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-
-        <div class="time-slots">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-
-        <div class="time-slots">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
+        <div class="buttons-wrapper">
+          <button class="edit">
+            <img src=" ./assets/book-edit.svg " alt="booking edit icon" />
+            რედაქტირება
+          </button>
+          <button class="dlt">
+            <img src="./assets/book-dlt.svg" alt="booking delete icon" />
+            წაშლა
+          </button>
         </div>
       </div>
     </div>
@@ -161,6 +185,12 @@ export class CardDetailComponent {
   @Input() selectedCard: any;
   @Input() starsArray: any[] = [];
   @Output() backToCards: EventEmitter<void> = new EventEmitter<void>();
+
+  showInput = false;
+
+  onInput(isShowInput: boolean) {
+    this.showInput = isShowInput;
+  }
 
   goBack() {
     this.backToCards.emit();
