@@ -1,35 +1,27 @@
-.wrapper {
-  width: 1208px;
-  height: 250px;
+.user-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 366px;
+  height: 800px;
+  border-radius: 10px;
   border: 1px solid #ecf2f8;
   box-shadow: 0px 4px 30px 0px #0533540d;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
   margin-top: 73px;
-  margin-left: 62px;
+  margin-left: 42px;
 }
 
-.info-wrapper {
-  margin-left: 40px;
+.maryam {
+  width: 157px;
+  height: 157px;
+  border-radius: 50%;
+  margin-top: 45px;
 }
 
-.stars {
-  margin-top: 16px;
-}
-
-.vertical-line {
-  height: 140px;
-  width: 1px;
-  background-color: #ecf2f8;
-  margin-left: 36px;
-}
-
-.descriptions {
-  margin-left: 51px;
-}
-
-span {
+.costumer,
+.id,
+.id-number .email,
+.gmail {
   color: #18a4e1;
   font-family: "FiraGO", sans-serif;
   font-weight: 400;
@@ -37,26 +29,67 @@ span {
   line-height: 21.6px;
 }
 
-.position-two {
-  margin-top: 17px;
+.id-number,
+.gmail {
+  color: #0533544d;
 }
 
-.position-three {
-  margin-top: 23px;
+.id {
+  margin-top: 45px;
+  color: #053354;
 }
 
-.position-one,
-.position-two,
-.position-three {
+.email {
+  margin-top: 35px;
+  color: #053354;
+}
+
+.costumer {
+  margin-top: 10px;
+}
+
+.password-recover {
+  color: #053354;
   font-family: "FiraGO", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 21.6px;
-  color: #053354;
+  margin-top: 36px;
 }
 
-.avatar {
-  margin-left: 48px;
+.my-bookings {
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  margin-top: 35px;
+}
+
+.numbers {
+  color: #0533544d;
+}
+
+.bookings,
+.booking-numbers {
+  color: #18a4e1;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 31.2px;
+}
+
+.booking-numbers {
+  color: #0533544d;
+}
+
+.main-wrapper {
+  display: flex;
+}
+
+.calendar-wrapper {
+  margin-top: 73px;
+  margin-left: 32px;
 }
 
 .calendar {
@@ -296,89 +329,4 @@ span {
 .right-click-arrow:hover {
   cursor: pointer;
   background-color: white;
-}
-
-.inputDescription {
-  position: absolute;
-  width: 420px;
-  height: 263px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 30px 0px #05335433;
-  background-color: white;
-  padding-top: 25px;
-  padding-left: 31px;
-}
-
-.greenText,
-.text {
-  color: #3acf99;
-  font-family: "FiraGO", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19.2px;
-}
-
-.text {
-  color: #053354;
-  margin-top: 10px;
-}
-
-.descInput {
-  width: 357px;
-  height: 90px;
-  border-radius: 10px;
-  border: 1px solid #ecf2f8;
-  margin-top: 15px;
-  display: flex;
-  padding-top: 10px;
-  padding-left: 10px;
-  font-family: "FiraGO", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.8px;
-  color: #0533544d;
-}
-
-.descInput {
-  font-family: "FiraGO", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.8px;
-  color: #0533544d;
-}
-
-.buttonBook {
-  width: 170px;
-  height: 50px;
-  background-color: #3acf99;
-  border-radius: 50px;
-  color: white;
-  margin-top: 13px;
-}
-
-.attention {
-  width: 320px;
-  height: 78px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0px 4px 30px 0px #05335433;
-}
-
-.redText,
-.TextSecond {
-  color: #ff2c52;
-  font-family: "FiraGO", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19.2px;
-}
-
-.TextSecond {
-  color: #053354;
-  margin-top: 8px;
 }
