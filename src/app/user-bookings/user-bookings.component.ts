@@ -8,9 +8,9 @@ import { Input } from '@angular/core';
     <div class="main-wrapper">
       <div class="user-information">
         <img
-          class="maryam"
-          src="/assets/maryam.jpg"
-          alt="maryam profile picture"
+          class="profile-picture-two"
+          src="/assets/profile-picture-two.svg"
+          alt="profile picture"
         />
         <h1 class="costumer">მომხმარებელი</h1>
         <p class="id">პირადი ნომერი :</p>
@@ -174,6 +174,27 @@ import { Input } from '@angular/core';
                 <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
                 <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
               </div>
+            </div>
+            <div class="buttons-wrapper">
+              <div class="container-edit-information">
+                <button class="edit">
+                  <img
+                    class="image-edit"
+                    src=" ./assets/book-edit.svg "
+                    alt="booking edit icon"
+                  />
+                  რედაქტირება
+                </button>
+                <p class="description-edit">*აღწერის ცვლილება</p>
+              </div>
+              <button class="dlt">
+                <img
+                  class="image-dlt"
+                  src="./assets/book-dlt.svg"
+                  alt="booking delete icon"
+                />
+                წაშლა
+              </button>
             </div>
           </div>
         </div>
