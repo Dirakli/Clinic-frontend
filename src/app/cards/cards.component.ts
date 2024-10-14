@@ -2,10 +2,17 @@ import { Component } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import { CardDetailComponent } from '../card-detail/card-detail.component';
 import { UserBookingsComponent } from '../user-bookings/user-bookings.component';
+import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.component';
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [NgIf, NgFor, CardDetailComponent, UserBookingsComponent],
+  imports: [
+    NgIf,
+    NgFor,
+    CardDetailComponent,
+    UserBookingsComponent,
+    DoctorBookingsComponent,
+  ],
   template: `
     <div *ngIf="!selectedCard" class="cards">
       <div
@@ -92,8 +99,10 @@ import { UserBookingsComponent } from '../user-bookings/user-bookings.component'
     >
     </app-card-detail> -->
 
-    <app-user-bookings *ngIf="selectedCard" (backToCards)="goBack()">
-    </app-user-bookings>
+    <!-- <app-user-bookings *ngIf="selectedCard" (backToCards)="goBack()">
+    </app-user-bookings> -->
+
+    <app-doctor-bookings *ngIf="selectedCard"></app-doctor-bookings>
   `,
   styleUrls: ['./cards.component.css'],
 })
