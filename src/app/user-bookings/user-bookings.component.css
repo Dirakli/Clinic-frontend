@@ -11,9 +11,9 @@
   margin-left: 42px;
 }
 
-.maryam {
-  width: 157px;
-  height: 157px;
+.profile-picture-two {
+  /* width: 157px;
+  height: 157px; */
   border-radius: 50%;
   margin-top: 45px;
 }
@@ -93,7 +93,7 @@
 }
 
 .calendar {
-  width: 1111px;
+  width: 830px;
   height: 700px;
   margin-top: 67px;
   margin-left: 76px;
@@ -260,12 +260,14 @@
 
 .divider {
   display: flex;
+  flex-direction: column;
 }
 
 .buttons-wrapper {
   display: flex;
-  flex-direction: column;
   margin-left: 51px;
+  margin-top: 31px;
+  align-self: end;
 }
 
 .edit {
@@ -282,7 +284,6 @@
   line-height: 21.6px;
   width: 230px;
   height: 50px;
-  margin-top: 30px;
 }
 
 .dlt {
@@ -299,7 +300,7 @@
   line-height: 21.6px;
   width: 170px;
   height: 50px;
-  margin-top: 20px;
+  margin-left: 30px;
 }
 
 .left-click-arrow,
@@ -329,4 +330,27 @@
 .right-click-arrow:hover {
   cursor: pointer;
   background-color: white;
+}
+
+.description-edit {
+  color: #0533544d;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-top: 5px;
+}
+
+.container-edit-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-edit {
+  margin-right: 19px;
+}
+
+.image-dlt {
+  margin-right: 12px;
 }

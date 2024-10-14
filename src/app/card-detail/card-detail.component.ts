@@ -181,11 +181,19 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         </div>
         <div class="buttons-wrapper">
           <button class="edit">
-            <img src=" ./assets/book-edit.svg " alt="booking edit icon" />
+            <img
+              class="image-edit"
+              src=" ./assets/book-edit.svg "
+              alt="booking edit icon"
+            />
             რედაქტირება
           </button>
           <button class="dlt">
-            <img src="./assets/book-dlt.svg" alt="booking delete icon" />
+            <img
+              class="image-dlt"
+              src="./assets/book-dlt.svg"
+              alt="booking delete icon"
+            />
             წაშლა
           </button>
         </div>
