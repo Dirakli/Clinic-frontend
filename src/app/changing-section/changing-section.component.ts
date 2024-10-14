@@ -4,6 +4,7 @@ import { NgIf, NgStyle, NgClass, NgFor } from '@angular/common';
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { CardsComponent } from '../cards/cards.component';
 import { listComponent } from '../list/list.component';
+import { AdministrationComponent } from '../administration/administration.component';
 @Component({
   selector: 'app-changing-section',
   standalone: true,
@@ -16,6 +17,7 @@ import { listComponent } from '../list/list.component';
     NgFor,
     CardsComponent,
     listComponent,
+    AdministrationComponent,
   ],
   template: `
     <div *ngIf="showRegistration">
@@ -43,10 +45,11 @@ import { listComponent } from '../list/list.component';
         </div>
       </div>
     </div>
-    <div *ngIf="!showRegistration" class="list-card-wrapper">
+    <!-- <div *ngIf="!showRegistration" class="list-card-wrapper">
       <app-list></app-list>
       <app-cards></app-cards>
-    </div>
+    </div> -->
+    <app-administration></app-administration>
   `,
   styleUrls: ['./changing-section.component.css'],
 })
