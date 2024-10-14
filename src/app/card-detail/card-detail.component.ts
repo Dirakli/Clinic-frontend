@@ -82,7 +82,20 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
           <div class="time-slots">
             <div (click)="onInput(!showInput)" class="cube">
               <span class="plus">+</span> დაჯავშნა
-              <div class="inputDescription" *ngIf="!showInput">კუკურელია</div>
+              <div
+                (click)="onBook(!showAttention)"
+                class="inputDescription"
+                *ngIf="!showInput"
+              >
+                <p class="greenText">გსურთ ვიზიტის დაჯავშნა ?</p>
+                <p class="text">შეგიძლიათ მიუთუთოთ თქვენი პრობლემა</p>
+                <input placeholder="აღწერა..." type="text" class="descInput" />
+                <button class="buttonBook">დაჯავშნა</button>
+              </div>
+              <div class="attention" *ngIf="showAttention">
+                <p class="redText">დასაჯავშნად გთხოვთ გაიაროთ</p>
+                <p class="TextSecond">ავტორიზაცია ან რეგისტრაცია.</p>
+              </div>
             </div>
             <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
             <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
@@ -184,12 +197,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class CardDetailComponent {
   @Input() selectedCard: any;
   @Input() starsArray: any[] = [];
-  @Output() backToCards: EventEmitter<void> = new EventEmitter<void>();
+  backToCards: EventEmitter<void> = new EventEmitter<void>();
 
   showInput = false;
+  showAttention = false;
 
   onInput(isShowInput: boolean) {
     this.showInput = isShowInput;
+  }
+
+  onBook(isShowAttention: boolean) {
+    this.showAttention = isShowAttention;
   }
 
   goBack() {
