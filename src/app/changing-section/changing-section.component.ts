@@ -49,7 +49,7 @@ import { AdministrationComponent } from '../administration/administration.compon
       <app-list></app-list>
       <app-cards></app-cards>
     </div> -->
-    <app-administration></app-administration>
+    <app-administration *ngIf="!showRegistration"></app-administration>
   `,
   styleUrls: ['./changing-section.component.css'],
 })
