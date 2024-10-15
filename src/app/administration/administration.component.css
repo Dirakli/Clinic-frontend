@@ -1,6 +1,7 @@
 .main-wrapper {
   display: flex;
   flex-direction: column;
+  margin-left: 148px;
 }
 
 .administrator-section {
@@ -10,8 +11,7 @@
   height: 50px;
   border-radius: 25px;
   align-items: center;
-  padding-left: 24px;
-  margin-right: 35px;
+  justify-content: space-around;
 }
 
 .three-lines {
@@ -40,4 +40,52 @@
   background-color: #18a4e1;
   border-radius: 10px;
   margin-top: 4px;
+}
+
+.registration,
+.categories,
+.changing-sections {
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+}
+
+.registration:active,
+.categories:active,
+.changing-sections:active {
+  color: #18a4e1;
+}
+
+.additional-section {
+  display: flex;
+}
+
+.doctors,
+.costumers,
+.administrators {
+  width: 350px;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #18a4e14d;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctors:active,
+.costumers:active,
+.administrators:active {
+  background-color: #f0faff;
+}
+
+.doctors {
+  margin-left: 16px;
+}
+
+.header-wrapper {
+  display: flex;
+  margin-top: 45px;
 }
