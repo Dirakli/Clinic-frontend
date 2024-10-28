@@ -85,7 +85,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
               <div
                 (click)="onBook(!showAttention)"
                 class="inputDescription"
-                *ngIf="!showInput"
+                *ngIf="showInput"
               >
                 <p class="greenText">გსურთ ვიზიტის დაჯავშნა ?</p>
                 <p class="text">შეგიძლიათ მიუთუთოთ თქვენი პრობლემა</p>

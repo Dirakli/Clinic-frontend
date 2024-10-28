@@ -91,18 +91,18 @@ import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.comp
       <div class="line"></div>
     </div>
 
-    <!-- <app-card-detail
+    <app-card-detail
       *ngIf="selectedCard"
       [selectedCard]="selectedCard"
       [starsArray]="starsArray"
       (backToCards)="goBack()"
     >
-    </app-card-detail> -->
+    </app-card-detail>
 
     <!-- <app-user-bookings *ngIf="selectedCard" (backToCards)="goBack()">
     </app-user-bookings> -->
 
-    <app-doctor-bookings *ngIf="selectedCard"></app-doctor-bookings>
+    <!-- <app-doctor-bookings *ngIf="selectedCard"></app-doctor-bookings> -->
   `,
   styleUrls: ['./cards.component.css'],
 })
