@@ -10,13 +10,12 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 
 @Component({
   selector: 'app-registration',
   standalone: true,
   imports: [ReactiveFormsModule, HttpClientModule, CommonModule],
-
   template: `
     <div class="main-wrapper">
       <h1>რეგისტრაცია</h1>

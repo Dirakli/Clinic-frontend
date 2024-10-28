@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AdministrationDoctorComponent } from '../administration-doctor/administration-doctor.component';
 import { AdministrationCategoriesComponent } from '../administration-categories/administration-categories.component';
+
 import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-administration',
