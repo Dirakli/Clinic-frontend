@@ -45,11 +45,11 @@ import { AdministrationComponent } from '../administration/administration.compon
         </div>
       </div>
     </div>
-    <!-- <div *ngIf="!showRegistration" class="list-card-wrapper">
+    <div *ngIf="!showRegistration" class="list-card-wrapper">
       <app-list></app-list>
       <app-cards></app-cards>
-    </div> -->
-    <app-administration *ngIf="!showRegistration"></app-administration>
+    </div>
+    <!-- <app-administration *ngIf="!showRegistration"></app-administration> -->
   `,
   styleUrls: ['./changing-section.component.css'],
 })
