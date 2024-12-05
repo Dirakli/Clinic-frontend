@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-user-bookings',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   template: `
     <div class="main-wrapper">
       <div class="user-information">

@@ -107,31 +107,6 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
               Password is required.
             </div>
           </div>
-
-          <!-- Additional required fields -->
-          <div class="input-wrapper four">
-            <label for="role">Role</label>
-            <input id="role" type="text" formControlName="role" />
-            <div
-              *ngIf="
-                registrationForm.get('role')?.invalid &&
-                registrationForm.get('role')?.touched
-              "
-            >
-              Role is required.
-            </div>
-
-            <label for="category">Category</label>
-            <input id="category" type="text" formControlName="category" />
-            <div
-              *ngIf="
-                registrationForm.get('category')?.invalid &&
-                registrationForm.get('category')?.touched
-              "
-            >
-              Category is required.
-            </div>
-          </div>
         </div>
         <button type="submit" [disabled]="registrationForm.invalid">
           რეგისტრაცია
