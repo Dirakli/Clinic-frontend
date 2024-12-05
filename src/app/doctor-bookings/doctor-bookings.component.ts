@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-doctor-bookings',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   template: `
     <div class="main-wrapper">
       <div class="user-information">

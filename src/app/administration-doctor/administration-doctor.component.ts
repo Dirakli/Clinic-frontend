@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-administration-doctor',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   template: `
     <div class="container">
       <div class="other-wrapper">
