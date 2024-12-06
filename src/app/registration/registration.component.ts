@@ -10,7 +10,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registration',
@@ -29,39 +29,15 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
               formControlName="name"
               placeholder="( მინიმუმ 5 სიმბოლო )"
             />
-            <div
-              *ngIf="
-                registrationForm.get('name')?.invalid &&
-                registrationForm.get('name')?.touched
-              "
-            >
-              Name is required.
-            </div>
 
             <label for="last-name" class="second-label">გვარი</label>
             <input id="last-name" type="text" formControlName="surname" />
-            <div
-              *ngIf="
-                registrationForm.get('surname')?.invalid &&
-                registrationForm.get('surname')?.touched
-              "
-            >
-              Surname is required.
-            </div>
           </div>
 
           <div class="input-wrapper two">
             <label for="email">Email</label>
             <input id="email" type="email" formControlName="email" />
             <img src="./assets/mail-icon.svg" class="mail" alt="mail logo" />
-            <div
-              *ngIf="
-                registrationForm.get('email')?.invalid &&
-                registrationForm.get('email')?.touched
-              "
-            >
-              Email is required.
-            </div>
 
             <div class="activation-code-wrapper second-label">
               <label for="activation-code">აქტივაციის კოდი</label>
@@ -82,14 +58,6 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
               formControlName="private_number"
               placeholder="00000000000"
             />
-            <div
-              *ngIf="
-                registrationForm.get('private_number')?.invalid &&
-                registrationForm.get('private_number')?.touched
-              "
-            >
-              Personal ID is required.
-            </div>
 
             <label for="password" class="second-label">პაროლი</label>
             <input
@@ -98,14 +66,6 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
               formControlName="password"
               placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
             />
-            <div
-              *ngIf="
-                registrationForm.get('password')?.invalid &&
-                registrationForm.get('password')?.touched
-              "
-            >
-              Password is required.
-            </div>
           </div>
         </div>
         <button type="submit" [disabled]="registrationForm.invalid">
