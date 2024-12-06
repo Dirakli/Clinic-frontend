@@ -150,3 +150,12 @@
   margin-top: 18px;
   align-items: flex-end;
 }
+
+@media (max-width: 2000px) {
+  .card {
+    width: 300px;
+  }
+  .views-pin-wrapper {
+    width: 300px;
+  }
+}

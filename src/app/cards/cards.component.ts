@@ -1,110 +1,21 @@
 import { Component } from '@angular/core';
-import { NgIf, NgFor } from '@angular/common';
-import { CardDetailComponent } from '../card-detail/card-detail.component';
-import { UserBookingsComponent } from '../user-bookings/user-bookings.component';
-import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.component';
+import { NgIf, NgFor } from '@angular/common'; // Angular common directives
+import { CardDetailComponent } from '../card-detail/card-detail.component'; // Adjust this path if necessary
+import { UserBookingsComponent } from '../user-bookings/user-bookings.component'; // Adjust path
+import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.component'; // Adjust path
+
 @Component({
   selector: 'app-cards',
   standalone: true,
   imports: [
-    NgIf,
-    NgFor,
-    CardDetailComponent,
-    UserBookingsComponent,
-    DoctorBookingsComponent,
+    NgIf, // For *ngIf directive
+    NgFor, // For *ngFor directive
+    CardDetailComponent, // Standalone component
+    UserBookingsComponent, // Standalone component
+    DoctorBookingsComponent, // Standalone component
   ],
-  template: `
-    <div *ngIf="!selectedCard" class="cards">
-      <div
-        class="card-wrapper"
-        *ngFor="let card of cardsArray"
-        (click)="viewCardDetails(card)"
-      >
-        <div class="card">
-          <div class="views-pin-wrapper">
-            <div class="views">
-              <img src="/assets/view.svg" alt="view icon" />{{ card.views }}
-            </div>
-            <img class="pin" src="/assets/pin.svg" alt="pin icon" />
-          </div>
-          <img class="avatar" [src]="card.avatar" alt="profile picture" />
-          <h3 class="doctor-name">{{ card.name }}</h3>
-          <p class="position">{{ card.position }}</p>
-          <div class="stars">
-            <img
-              *ngFor="let star of starsArray"
-              src="/assets/star.svg"
-              alt="star icon"
-            />
-          </div>
-          <button class="visits">
-            მიღებაზე ჩაწერა
-            <img
-              class="right-arrow"
-              src="/assets/right-arrow-dark.svg"
-              alt=""
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="cards unpin" *ngIf="!selectedCard">
-      <div
-        class="card-wrapper"
-        *ngFor="let card of cardsArray"
-        (click)="viewCardDetails(card)"
-      >
-        <div class="card unpin-card">
-          <div class="views-pin-wrapper">
-            <div class="views">
-              <img src="/assets/view.svg" alt="view icon" />{{ card.views }}
-            </div>
-            <img class="pin" src="/assets/pin-dark.svg" alt="pin icon" />
-          </div>
-          <img class="avatar" [src]="card.avatar" alt="profile picture" />
-          <h3 class="doctor-name">{{ card.name }}</h3>
-          <p class="position">{{ card.position }}</p>
-          <div class="stars">
-            <img
-              *ngFor="let star of starsArray"
-              src="/assets/star.svg"
-              alt="star icon"
-            />
-          </div>
-          <button class="visits visits-unpin">
-            მიღებაზე ჩაწერა
-            <img
-              class="right-arrow"
-              src="/assets/right-arrow-dark.svg"
-              alt=""
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="details-wrapper" *ngIf="!selectedCard">
-      <div class="see-details" (click)="viewCardDetails(card)">
-        სრულად ნახვა
-      </div>
-      <div class="line"></div>
-    </div>
-
-    <app-card-detail
-      *ngIf="selectedCard"
-      [selectedCard]="selectedCard"
-      [starsArray]="starsArray"
-      (backToCards)="goBack()"
-    >
-    </app-card-detail>
-
-    <!-- <app-user-bookings *ngIf="selectedCard" (backToCards)="goBack()">
-    </app-user-bookings> -->
-
-    <!-- <app-doctor-bookings *ngIf="selectedCard"></app-doctor-bookings> -->
-  `,
-  styleUrls: ['./cards.component.css'],
+  templateUrl: './cards.component.html', // Corrected template file path
+  styleUrls: ['./cards.component.css'], // Corrected styles file path
 })
 export class CardsComponent {
   starsArray = Array(5);
