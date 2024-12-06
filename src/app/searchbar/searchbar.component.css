@@ -2,6 +2,7 @@
   height: 120px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #ecf2f8;
   padding-left: 150px;
   margin-top: 27px;
@@ -25,6 +26,8 @@
 .location-wrapper {
   display: flex;
   align-items: center;
+  /* width: 314px; */
+  flex-shrink: 0; /* Prevent shrinking of the wrappers */
 }
 
 .phone-number,
@@ -40,15 +43,19 @@
 
 .search-form {
   display: flex;
-  margin-left: 97px;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1050px;
+  margin-right: 149px;
 }
 
 .input-byname {
-  width: 480px;
+  max-width: 480px;
+  width: 40%;
   height: 50px;
   border-radius: 50px;
   background-color: #ffffff;
-  flex-shrink: 0;
+  flex-shrink: 1; /* Allow inputs to shrink */
   display: flex;
   padding-left: 30px;
   align-items: center;
@@ -76,13 +83,14 @@
 }
 
 .input-byposition {
-  width: 480px;
+  max-width: 480px;
+  width: 40%;
   height: 50px;
   border-radius: 50px;
   background-color: #ffffff;
-  flex-shrink: 0;
   display: flex;
   padding-left: 30px;
+  flex-shrink: 1; /* Allow inputs to shrink */
   align-items: center;
   font-family: "FiraGO", sans-serif;
   font-weight: 400;
@@ -101,4 +109,29 @@
   height: 50px;
   background-color: #053354;
   margin-left: 20px;
+}
+
+@media (max-width: 2000px) {
+  .phone-number {
+    font-size: 12px;
+  }
+  .location {
+    font-size: 12px;
+  }
+
+  .input-byposition::placeholder {
+    font-size: 12px;
+  }
+
+  .input-byname::placeholder {
+    font-size: 12px;
+  }
+
+  .input-byname {
+    width: 30%;
+  }
+
+  .input-byposition {
+    width: 30%;
+  }
 }
