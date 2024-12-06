@@ -12,9 +12,14 @@ import { NgFor } from '@angular/common';
       </div>
       <ul class="unordered-list">
         <li *ngFor="let item of categories" class="list-item">
-          <span class="count">({{ item.count }})</span>
+          <span class="count">( {{ item.count }} )</span>
 
           <span class="name">{{ item.name }}</span>
+          <img
+            src="/assets/right-arrow-blue.svg"
+            alt="right arrow blue colored"
+            class="arrow"
+          />
         </li>
       </ul>
       <div class="show-more-container">
