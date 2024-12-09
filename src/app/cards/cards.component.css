@@ -1,5 +1,4 @@
 .cards {
-  width: 1210px;
   margin-left: 60px;
   margin-top: 73px;
   display: flex;
@@ -68,6 +67,11 @@
   margin-top: 15px;
   font-family: "FiraGO", sans-serif;
   margin-top: 163px;
+}
+
+.card-wrapper:nth-child(2),
+.card-wrapper:nth-child(3) {
+  margin-left: 20px;
 }
 
 .position {
@@ -151,7 +155,7 @@
   align-items: flex-end;
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 19px) {
   .card {
     width: 300px;
   }

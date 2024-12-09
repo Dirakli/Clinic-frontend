@@ -43,7 +43,9 @@ p {
 
 .list-card-wrapper {
   display: flex;
+  justify-content: space-between;
   padding-left: 150px;
+  padding-right: 149px;
 }
 
 .see-details {
