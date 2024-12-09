@@ -15,12 +15,14 @@ import { Component } from '@angular/core';
           <h1 class="title">კლინიკა</h1>
         </div>
         <div class="navigation-list-wrapper">
-          <ul class="title-list">
-            <li>ინფორმაცია</li>
-            <li>პაციენტებისთვის</li>
-            <li>კონტაქტი</li>
-            <li>გამოგვყევით</li>
-          </ul>
+          <div class="navigation-one">
+            <ul class="title-list">
+              <li class="first">ინფორმაცია</li>
+              <li class="second">პაციენტებისთვის</li>
+              <li class="third">კონტაქტი</li>
+              <li class="fourth">გამოგვყევით</li>
+            </ul>
+          </div>
           <div class="line"></div>
           <div class="navigation-many">
             <ul>
