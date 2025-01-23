@@ -40,16 +40,16 @@ import { Component } from '@angular/core';
               <li>მედია</li>
             </ul>
             <ul>
-              <li>
+              <li id="alter-one">
                 სამუშაო დღეები : <br />
                 ორშ - პარ
               </li>
-              <li>
+              <li id="alter-two">
                 სამუშაო დრო : <br />
                 9:00 - 17:00
               </li>
-              <li>იაკობ ნიკოლაძე №10</li>
-              <li>032 2 100 100</li>
+              <li id="alter-three">იაკობ ნიკოლაძე №10</li>
+              <li id="alter-four">032 2 100 100</li>
             </ul>
             <ul>
               <li>Facebook</li>
