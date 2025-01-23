@@ -84,7 +84,8 @@ button {
   margin-bottom: 125px;
 }
 
-.second-label {
+.second-label,
+.third-label {
   margin-top: 30px;
 }
 
@@ -94,6 +95,21 @@ button {
   position: absolute;
   right: 20px;
   top: 40px;
+}
+
+.upload {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 248px;
+}
+.cv {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 248px;
 }
 
 .two {
@@ -124,9 +140,9 @@ button {
 .surname,
 .activation-code,
 .id {
-  top: 190px;
+  top: 185px;
 }
 
-.warning.ng-invalid.ng-touched {
-  color: yellow;
+.photo {
+  top: 288px;
 }

@@ -29,19 +29,25 @@ import { CommonModule } from '@angular/common';
               formControlName="name"
               placeholder="( მინიმუმ 5 სიმბოლო )"
             />
+            <span class="warning">*გთხოვთ, მიუთითოთ სახელი</span>
 
             <label for="last-name" class="second-label">გვარი</label>
             <input id="last-name" type="text" formControlName="surname" />
+            <span class="warning surname">*გთხოვთ, მიუთითოთ გვარი</span>
           </div>
 
           <div class="input-wrapper two">
             <label for="email">Email</label>
             <input id="email" type="email" formControlName="email" />
+            <span class="warning">*გთხოვთ, მიუთითოთ მეილი</span>
             <img src="./assets/mail-icon.svg" class="mail" alt="mail logo" />
 
             <div class="activation-code-wrapper second-label">
               <label for="activation-code">აქტივაციის კოდი</label>
               <label for="duration" class="duration">ვადა 30 წთ</label>
+              <span class="warning activation-code"
+                >*ბმულის მოქედების ვადა ამოიწურა</span
+              >
             </div>
             <input
               id="activation-code"
@@ -58,6 +64,7 @@ import { CommonModule } from '@angular/common';
               formControlName="private_number"
               placeholder="00000000000"
             />
+            <span class="warning">*გთხოვთ, მიუთითოთ პირადი ნომერი</span>
 
             <label for="password" class="second-label">პაროლი</label>
             <input
@@ -66,6 +73,7 @@ import { CommonModule } from '@angular/common';
               formControlName="password"
               placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
             />
+            <span class="warning id">*გთხოვთ, მიუთითოთ პაროლი</span>
           </div>
         </div>
         <button type="submit" [disabled]="registrationForm.invalid">
