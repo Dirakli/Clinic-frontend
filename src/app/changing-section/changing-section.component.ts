@@ -14,11 +14,8 @@ import { ActivatedRoute } from '@angular/router';
     NgIf,
     AuthenticationComponent,
     NgStyle,
-    NgClass,
-    NgFor,
     CardsComponent,
     listComponent,
-    AdministrationComponent,
   ],
   template: `
     <div *ngIf="showRegistration">

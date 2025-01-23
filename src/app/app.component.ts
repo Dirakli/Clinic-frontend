@@ -8,13 +8,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterModule,
-    HeaderComponent,
-    FooterComponent,
-    SearchbarComponent,
-    AuthenticationComponent,
-  ],
+  imports: [RouterModule, HeaderComponent, FooterComponent, SearchbarComponent],
   template: `
     <div class="wrapper">
       <header>
