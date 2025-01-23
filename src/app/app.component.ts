@@ -1,28 +1,41 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { ChangingSectionComponent } from './changing-section/changing-section.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
+    RouterModule,
     HeaderComponent,
-    SearchbarComponent,
     FooterComponent,
-    ChangingSectionComponent,
+    SearchbarComponent,
+    AuthenticationComponent,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  template: `
+    <div class="wrapper">
+      <header>
+        <app-header
+          (showAuthenticationChange)="showAuthentication = $event"
+        ></app-header>
+      </header>
+      <app-searchbar></app-searchbar>
+
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </div>
+  `,
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'clinic-frontend';
   showRegistration = false;
   showAuthentication = false;
 
+  // Updated to handle events from HeaderComponent
   onRegistration(isRegistrationShown: boolean) {
     this.showRegistration = isRegistrationShown;
   }

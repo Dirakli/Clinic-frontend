@@ -101,6 +101,22 @@
   margin-left: 136px;
 }
 
+#alter-one {
+  line-height: 20px;
+}
+#alter-two {
+  line-height: 20px;
+  margin-top: 10px;
+}
+#alter-three {
+  line-height: 20px;
+  margin-top: 10px;
+}
+#alter-four {
+  line-height: 20px;
+  margin-top: 10px;
+}
+
 .navigation-many ul li {
   font-family: "firago", sans-serif;
   font-size: 16px;
