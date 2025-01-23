@@ -15,7 +15,7 @@ import { NgFor, NgIf } from '@angular/common';
               alt="profile picture"
             />
             <h1 class="doctor">გიორგი ხორავა</h1>
-            <p class="proffession">ექიმი</p>
+            <p class="proffesion">ექიმი</p>
             <span class="position">კარდიოლოგი / არითმოლოგი</span>
             <div class="stars">
               <img

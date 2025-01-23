@@ -7,6 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   template: `
     <div class="wrapper">
       <img class="avatar" [src]="selectedCard?.avatar" alt="profile picture" />
+      <button (click)="goBack()">goBack</button>
       <div class="info-wrapper">
         <h3 class="doctor-name">{{ selectedCard?.name }}</h3>
         <p class="position">{{ selectedCard?.position }}</p>

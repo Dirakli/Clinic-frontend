@@ -50,11 +50,12 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 21.6px;
+  cursor: pointer;
 }
 
-.registration:active,
-.categories:active,
-.changing-sections:active {
+.registration:hover,
+.categories:hover,
+.changing-sections:hover {
   color: #18a4e1;
 }
 
@@ -75,10 +76,12 @@
   justify-content: center;
 }
 
-.doctors:active,
-.costumers:active,
-.administrators:active {
+.doctors:hover,
+.costumers:hover,
+.administrators:hover {
   background-color: #f0faff;
+  color: #18a4e1;
+  cursor: pointer;
 }
 
 .doctors {

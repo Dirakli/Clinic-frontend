@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { RegistrationComponent } from '../registration/registration.component';
-import { NgIf, NgStyle, NgClass, NgFor } from '@angular/common';
+import { NgIf, NgStyle } from '@angular/common';
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { CardsComponent } from '../cards/cards.component';
 import { listComponent } from '../list/list.component';
-import { AdministrationComponent } from '../administration/administration.component';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-changing-section',
@@ -47,7 +46,6 @@ import { ActivatedRoute } from '@angular/router';
       <app-list></app-list>
       <app-cards></app-cards>
     </div>
-    <!-- <app-administration *ngIf="!showRegistration"></app-administration> -->
   `,
   styleUrls: ['./changing-section.component.css'],
 })
@@ -55,13 +53,9 @@ export class ChangingSectionComponent {
   @Input() showRegistration = false;
   @Input() showAuthentication = false;
 
-  // showRegistration = false;
-  // showAuthentication = false;
-
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // Subscribe to route data changes
     this.route.data.subscribe((data) => {
       this.showRegistration = data['showRegistration'] || false;
       this.showAuthentication = data['showAuthentication'] || false;

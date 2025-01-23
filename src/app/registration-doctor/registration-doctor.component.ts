@@ -22,45 +22,43 @@ import { Component } from '@angular/core';
 })
 export class RegistrationDoctorComponent {
   registrationForm: FormGroup;
+  formSubmitted = false;
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.registrationForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(5)]],
       surname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      activationCode: [''],
+      photo: [null, Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      role: ['', Validators.required],
-      category: ['', Validators.required],
+      cv: [null, Validators.required],
       private_number: ['', Validators.required],
+      category: ['', Validators.required],
     });
   }
 
   onSubmit() {
+    this.formSubmitted = true; // Flag to indicate form submission
+
+    // Mark all controls as touched
+    this.markAllAsTouched();
+
+    // Prevent submission if the form is invalid
     if (this.registrationForm.invalid) {
-      this.registrationForm.markAllAsTouched();
       return;
     }
 
+    // Proceed with form submission
     const formData = new FormData();
     formData.append('name', this.registrationForm.get('name')?.value);
     formData.append('surname', this.registrationForm.get('surname')?.value);
     formData.append('email', this.registrationForm.get('email')?.value);
     formData.append(
-      'activationCode',
-      this.registrationForm.get('activationCode')?.value
-    );
-    formData.append(
       'private_number',
       this.registrationForm.get('private_number')?.value
     );
     formData.append('password', this.registrationForm.get('password')?.value);
-    formData.append('role', this.registrationForm.get('role')?.value);
     formData.append('category', this.registrationForm.get('category')?.value);
-    formData.append(
-      'privateNumber',
-      this.registrationForm.get('privateNumber')?.value
-    );
 
     this.http
       .post('http://localhost:5271/api/Auth/sign-up', formData)
@@ -68,5 +66,15 @@ export class RegistrationDoctorComponent {
         next: (response) => console.log('Registration successful', response),
         error: (error) => console.error('Registration failed', error),
       });
+  }
+
+  // Mark all form controls as touched
+  markAllAsTouched() {
+    Object.keys(this.registrationForm.controls).forEach((field) => {
+      const control = this.registrationForm.get(field);
+      if (control) {
+        control.markAsTouched();
+      }
+    });
   }
 }

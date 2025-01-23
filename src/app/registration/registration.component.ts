@@ -29,25 +29,55 @@ import { CommonModule } from '@angular/common';
               formControlName="name"
               placeholder="( მინიმუმ 5 სიმბოლო )"
             />
-            <span class="warning">*გთხოვთ, მიუთითოთ სახელი</span>
+            <span
+              class="warning"
+              *ngIf="
+                registrationForm.get('name')?.invalid &&
+                registrationForm.get('name')?.touched
+              "
+            >
+              *გთხოვთ, მიუთითოთ სახელი
+            </span>
 
             <label for="last-name" class="second-label">გვარი</label>
             <input id="last-name" type="text" formControlName="surname" />
-            <span class="warning surname">*გთხოვთ, მიუთითოთ გვარი</span>
+            <span
+              class="warning surname"
+              *ngIf="
+                registrationForm.get('surname')?.invalid &&
+                registrationForm.get('surname')?.touched
+              "
+            >
+              *გთხოვთ, მიუთითოთ გვარი
+            </span>
           </div>
 
           <div class="input-wrapper two">
             <label for="email">Email</label>
             <input id="email" type="email" formControlName="email" />
-            <span class="warning">*გთხოვთ, მიუთითოთ მეილი</span>
+            <span
+              class="warning"
+              *ngIf="
+                registrationForm.get('email')?.invalid &&
+                registrationForm.get('email')?.touched
+              "
+            >
+              *გთხოვთ, მიუთითოთ მეილი
+            </span>
             <img src="./assets/mail-icon.svg" class="mail" alt="mail logo" />
 
             <div class="activation-code-wrapper second-label">
               <label for="activation-code">აქტივაციის კოდი</label>
               <label for="duration" class="duration">ვადა 30 წთ</label>
-              <span class="warning activation-code"
-                >*ბმულის მოქედების ვადა ამოიწურა</span
+              <span
+                class="warning activation-code"
+                *ngIf="
+                  registrationForm.get('activationCode')?.touched &&
+                  registrationForm.get('activationCode')?.hasError('required')
+                "
               >
+                *გთხოვთ, მიუთითოთ აქტივაციის კოდი
+              </span>
             </div>
             <input
               id="activation-code"
@@ -64,7 +94,15 @@ import { CommonModule } from '@angular/common';
               formControlName="private_number"
               placeholder="00000000000"
             />
-            <span class="warning">*გთხოვთ, მიუთითოთ პირადი ნომერი</span>
+            <span
+              class="warning"
+              *ngIf="
+                registrationForm.get('private_number')?.invalid &&
+                registrationForm.get('private_number')?.touched
+              "
+            >
+              *გთხოვთ, მიუთითოთ პირადი ნომერი
+            </span>
 
             <label for="password" class="second-label">პაროლი</label>
             <input
@@ -73,7 +111,24 @@ import { CommonModule } from '@angular/common';
               formControlName="password"
               placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
             />
-            <span class="warning id">*გთხოვთ, მიუთითოთ პაროლი</span>
+            <span
+              class="warning id"
+              *ngIf="
+                registrationForm.get('password')?.touched &&
+                registrationForm.get('password')?.hasError('required')
+              "
+            >
+              *გთხოვთ, მიუთითოთ პაროლი
+            </span>
+            <span
+              class="warning id"
+              *ngIf="
+                registrationForm.get('password')?.touched &&
+                registrationForm.get('password')?.hasError('minlength')
+              "
+            >
+              *პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს
+            </span>
           </div>
         </div>
         <button type="submit" [disabled]="registrationForm.invalid">
@@ -91,8 +146,8 @@ export class RegistrationComponent {
     this.registrationForm = this.formBuilder.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      activationCode: [''],
+      email: ['', [Validators.required]],
+      activationCode: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]],
       role: ['', Validators.required],
       category: ['', Validators.required],
@@ -121,10 +176,6 @@ export class RegistrationComponent {
     formData.append('password', this.registrationForm.get('password')?.value);
     formData.append('role', this.registrationForm.get('role')?.value);
     formData.append('category', this.registrationForm.get('category')?.value);
-    formData.append(
-      'privateNumber',
-      this.registrationForm.get('privateNumber')?.value
-    );
 
     this.http
       .post('http://localhost:5271/api/Auth/sign-up', formData)
