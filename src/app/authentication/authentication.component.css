@@ -83,3 +83,16 @@ h1 {
   line-height: 31.2px;
   color: #18a4e1;
 }
+
+.warning {
+  /* position: absolute;
+  top: 80px;
+  left: 20px; */
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16.8px;
+  color: #ff2c52;
+  margin-left: 20px;
+  margin-top: 5px;
+}

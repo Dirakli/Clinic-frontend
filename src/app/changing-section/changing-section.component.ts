@@ -20,7 +20,7 @@ import { ActivatedRoute } from '@angular/router';
     <div *ngIf="showRegistration">
       <app-registration></app-registration>
     </div>
-    <div *ngIf="showAuthentication">
+    <div>
       <app-authentication></app-authentication>
     </div>
     <div

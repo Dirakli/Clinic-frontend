@@ -23,11 +23,12 @@ import {
             placeholder="ელ. ფოსტა/ ტელეფონის ნომერი"
           />
           <div
+            class="warning"
             *ngIf="
               authForm.get('email')?.invalid && authForm.get('email')?.touched
             "
           >
-            Email or Phone is required
+            *გთხოვთ, მიუთითოთ მეილი ან ტელეფონის ნომერი
           </div>
 
           <input
@@ -37,12 +38,13 @@ import {
             placeholder="პაროლი"
           />
           <div
+            class="warning"
             *ngIf="
               authForm.get('password')?.invalid &&
               authForm.get('password')?.touched
             "
           >
-            Password is required
+            *გთხოვთ, მიუთითოთ პაროლი
           </div>
 
           <button type="button" class="recover-password">
