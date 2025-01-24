@@ -206,7 +206,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class CardDetailComponent {
   @Input() selectedCard: any;
   @Input() starsArray: any[] = [];
-  backToCards: EventEmitter<void> = new EventEmitter<void>();
+  @Output() backToCards: EventEmitter<void> = new EventEmitter<void>();
 
   showInput = false;
   showAttention = false;

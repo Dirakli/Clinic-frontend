@@ -3,6 +3,7 @@ import { NgIf, NgFor } from '@angular/common'; // Angular common directives
 import { CardDetailComponent } from '../card-detail/card-detail.component'; // Adjust this path if necessary
 import { UserBookingsComponent } from '../user-bookings/user-bookings.component'; // Adjust path
 import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.component'; // Adjust path
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
@@ -50,7 +51,12 @@ export class CardsComponent {
   }
 
   // Function to go back to the card list
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
   goBack() {
-    this.selectedCard = null; // Clear selected card to show list again
+    console.log('CardsComponent goBack called');
+    this.selectedCard = null; // Clear selected card
+    this.cdr.detectChanges(); // Trigger change detection manually
   }
 }
