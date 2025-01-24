@@ -6,7 +6,7 @@
   border-radius: 10px;
   display: flex;
   align-items: center;
-  margin-top: 73px;
+  margin-top: 5px;
   margin-left: 62px;
 }
 
@@ -389,4 +389,15 @@ span {
 
 .image-dlt {
   margin-right: 12px;
+}
+
+.goback {
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  background-color: transparent;
+  margin-top: 73px;
+  margin-left: 62px;
 }
