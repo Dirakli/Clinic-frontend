@@ -123,26 +123,6 @@ import { NgFor, NgIf } from '@angular/common';
             </div>
 
             <div class="time-slots">
-              <div (click)="onInput(!showInput)" class="cube">
-                <div
-                  (click)="onBook(!showAttention)"
-                  class="inputDescription"
-                  *ngIf="!showInput"
-                >
-                  <p class="greenText">გსურთ ვიზიტის დაჯავშნა ?</p>
-                  <p class="text">შეგიძლიათ მიუთუთოთ თქვენი პრობლემა</p>
-                  <input
-                    placeholder="აღწერა..."
-                    type="text"
-                    class="descInput"
-                  />
-                  <button class="buttonBook">დაჯავშნა</button>
-                </div>
-                <div class="attention" *ngIf="showAttention">
-                  <p class="redText">დასაჯავშნად გთხოვთ გაიაროთ</p>
-                  <p class="TextSecond">ავტორიზაცია ან რეგისტრაცია.</p>
-                </div>
-              </div>
               <div class="cube"></div>
               <div class="cube"></div>
               <div class="cube"></div>
