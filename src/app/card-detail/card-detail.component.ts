@@ -62,7 +62,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
           <div class="weekdays">
             <div *ngFor="let day of getCurrentDays(); let i = index">
-              <span>{{ day }}</span> ({{ weekdays[i % 7] }})
+              <span class="weekday-number" *ngIf="day !== null">
+                {{ day }}
+                <span class="weekday-name">({{ weekdays[i % 7] }})</span>
+              </span>
             </div>
           </div>
 
@@ -252,7 +255,7 @@ export class CardDetailComponent {
     'ნოემბერი', // November
     'დეკემბერი', // December
   ];
-  weekdays = ['კვირა', 'ორშ ', 'სამ ', 'ოთხ ', 'ხუთ ', 'პარ', 'შაბ'];
+  weekdays = ['ორშ ', 'სამ ', 'ოთხ ', 'ხუთ ', 'პარ', 'შაბ', 'კვი'];
 
   currentYear: number = new Date().getFullYear();
   currentMonthIndex: number = new Date().getMonth();
@@ -327,6 +330,11 @@ export class CardDetailComponent {
     // Only take the next 7 days, considering the total number of days in the month
     for (let i = startDay; i < startDay + 7 && i <= daysInMonth; i++) {
       days.push(i);
+    }
+
+    // Add null placeholders if fewer than 7 days are available
+    while (days.length < 7) {
+      days.push(null);
     }
 
     return days;

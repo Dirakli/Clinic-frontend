@@ -140,9 +140,10 @@ span {
 
 .weekdays {
   grid-column: 2 / span 7;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(7, 1fr); /* Create 7 equal partitions */
+  justify-items: center; /* Align content horizontally */
+  align-items: center; /* Align content vertically */
   background-color: #ecf2f8;
   padding: 10px;
   font-weight: bold;
@@ -150,9 +151,11 @@ span {
 }
 
 .weekdays div {
-  flex: 1;
   text-align: center;
   padding: 10px 0;
+}
+
+.weekday-name {
   color: #053354;
   font-family: "FiraGO", sans-serif;
   font-weight: 400;
@@ -160,7 +163,7 @@ span {
   line-height: 16.8px;
 }
 
-.weekdays div span {
+.weekday-number {
   color: #18a4e1;
   font-family: "FiraGO", sans-serif;
   font-weight: 500;
