@@ -12,4 +12,5 @@ export const routes: Routes = [
   { path: 'administration-doctor', component: AdministrationComponent },
   { path: 'userbookings', component: ChangingSectionComponent },
   { path: 'doctorbookings', component: ChangingSectionComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

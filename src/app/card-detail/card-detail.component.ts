@@ -38,6 +38,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     <div class="calendar">
       <div class="year-button-wrapper">
         <span class="year">2023</span>
+
         <div class="arrows-button">
           <button (click)="goToPreviousMonth()" class="leftarrow-button">
             <img src="/assets/leftarrow.svg" alt="left arrow" />
@@ -51,22 +52,18 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       <div class="divider">
         <div class="calendar-box">
           <div class="header empty">
-            <div class="left-click-arrow">
+            <div class="left-click-arrow" (click)="navigateLeft()">
               <img src="/assets/left.svg" alt="left arrow" />
             </div>
-            <div class="right-click-arrow">
+            <div class="right-click-arrow" (click)="navigateRight()">
               <img src="/assets/right.svg" alt="right arrow" />
             </div>
           </div>
 
           <div class="weekdays">
-            <div><span>17</span> ( ორშ )</div>
-            <div><span>18</span> ( სამ )</div>
-            <div><span>19</span> ( ოთხ )</div>
-            <div><span>20</span> ( ხუთ )</div>
-            <div><span>21</span> ( პარ )</div>
-            <div><span>22</span> ( შაბ )</div>
-            <div><span>23</span> ( კვი )</div>
+            <div *ngFor="let day of getCurrentDays(); let i = index">
+              <span>{{ day }}</span> ({{ weekdays[i % 7] }})
+            </div>
           </div>
 
           <div class="time-column">
@@ -224,32 +221,123 @@ export class CardDetailComponent {
     this.backToCards.emit();
   }
 
-  months: string[] = [
-    'იანვარი', // January
-    'თებერვალი', // February
-    'მარტი', // March
-    'აპრილი', // April
-    'მაისი', // May
-    'ივნისი', // June
-    'ივლისი', // July
-    'აგვისტო', // August
-    'სექტემბერი', // September
-    'ოქტომბერი', // October
-    'ნოემბერი', // November
-    'დეკემბერი', // December
+  /* new codesss */
+
+  months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
-  currentMonthIndex: number = 3;
-  goToPreviousMonth(): void {
-    this.currentMonthIndex =
-      this.currentMonthIndex === 0
-        ? this.months.length - 1
-        : this.currentMonthIndex - 1;
+  weekdays = ['კვირა', 'ორშ ', 'სამ ', 'ოთხ ', 'ხუთ ', 'პარ', 'შაბ'];
+
+  currentYear: number = new Date().getFullYear();
+  currentMonthIndex: number = new Date().getMonth();
+  currentDayOffset: number = 0; // Offset for navigating between 7-day sets
+  days: number[] = [];
+
+  // Function to go to the previous month
+  goToPreviousMonth() {
+    if (this.currentMonthIndex === 0) {
+      this.currentMonthIndex = 11; // Wrap to December
+      this.currentYear--;
+    } else {
+      this.currentMonthIndex--;
+    }
+
+    // Reset the days to 1-7 of the new month
+    this.currentDayOffset = 0; // Reset the offset to start from the first day
+    this.updateDays(); // Ensure days are recalculated when month changes
   }
 
-  goToNextMonth(): void {
-    this.currentMonthIndex =
-      this.currentMonthIndex === this.months.length - 1
-        ? 0
-        : this.currentMonthIndex + 1;
+  // Function to go to the next month
+  goToNextMonth() {
+    if (this.currentMonthIndex === 11) {
+      this.currentMonthIndex = 0; // Wrap to January
+      this.currentYear++;
+    } else {
+      this.currentMonthIndex++;
+    }
+
+    // Reset the days to 1-7 of the new month
+    this.currentDayOffset = 0; // Reset the offset to start from the first day
+    this.updateDays(); // Ensure days are recalculated when month changes
+  }
+
+  // Helper to get the current month days (e.g., January, February)
+
+  // Function to calculate and update days when month changes
+  updateDays() {
+    const daysInMonth = new Date(
+      this.currentYear,
+      this.currentMonthIndex + 1,
+      0
+    ).getDate();
+
+    // Display days from the currentDayOffset, ensuring we don't exceed the number of days in the month
+    this.days = [];
+    for (
+      let i = this.currentDayOffset + 1;
+      i <= Math.min(this.currentDayOffset + 7, daysInMonth);
+      i++
+    ) {
+      this.days.push(i);
+    }
+  }
+
+  ngOnInit() {
+    // Initialize the days when the component loads
+    this.updateDays;
+  }
+
+  getCurrentDays() {
+    const daysInMonth = new Date(
+      this.currentYear,
+      this.currentMonthIndex + 1,
+      0
+    ).getDate();
+    const days = [];
+
+    // Calculate the starting point based on the current offset
+    let startDay = this.currentDayOffset + 1;
+
+    // Only take the next 7 days, considering the total number of days in the month
+    for (let i = startDay; i < startDay + 7 && i <= daysInMonth; i++) {
+      days.push(i);
+    }
+
+    return days;
+  }
+
+  // Function to go to the next set of 7 days
+  navigateRight() {
+    const daysInMonth = new Date(
+      this.currentYear,
+      this.currentMonthIndex + 1,
+      0
+    ).getDate();
+
+    // Move to the next set of 7 days, but ensure we don't exceed the number of days in the month
+    if (this.currentDayOffset + 7 < daysInMonth) {
+      this.currentDayOffset += 7;
+      this.updateDays(); // Update the displayed days
+    }
+  }
+
+  // Function to go to the previous set of 7 days
+  navigateLeft() {
+    // Move to the previous set of 7 days, but ensure we don't go below 0
+    if (this.currentDayOffset - 7 >= 0) {
+      this.currentDayOffset -= 7;
+      this.updateDays(); // Update the displayed days
+    }
   }
 }
