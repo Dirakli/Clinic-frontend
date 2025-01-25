@@ -36,11 +36,11 @@ import { NgFor, NgIf } from '@angular/common';
           <div class="year-button-wrapper">
             <span class="year">2023</span>
             <div class="arrows-button">
-              <button class="leftarrow-button">
+              <button (click)="goToPreviousMonth()" class="leftarrow-button">
                 <img src="/assets/leftarrow.svg" alt="left arrow" />
               </button>
-              <p class="months">აპრილი</p>
-              <button class="rightarrow-button">
+              <p class="months">{{ months[currentMonthIndex] }}</p>
+              <button (click)="goToNextMonth()" class="rightarrow-button">
                 <img src="/assets/rightarrow.svg" alt="right arrow" />
               </button>
             </div>
@@ -204,5 +204,34 @@ export class DoctorBookingsComponent {
 
   onBook(isShowAttention: boolean) {
     this.showAttention = isShowAttention;
+  }
+
+  months: string[] = [
+    'იანვარი', // January
+    'თებერვალი', // February
+    'მარტი', // March
+    'აპრილი', // April
+    'მაისი', // May
+    'ივნისი', // June
+    'ივლისი', // July
+    'აგვისტო', // August
+    'სექტემბერი', // September
+    'ოქტომბერი', // October
+    'ნოემბერი', // November
+    'დეკემბერი', // December
+  ];
+  currentMonthIndex: number = 3;
+  goToPreviousMonth(): void {
+    this.currentMonthIndex =
+      this.currentMonthIndex === 0
+        ? this.months.length - 1
+        : this.currentMonthIndex - 1;
+  }
+
+  goToNextMonth(): void {
+    this.currentMonthIndex =
+      this.currentMonthIndex === this.months.length - 1
+        ? 0
+        : this.currentMonthIndex + 1;
   }
 }
