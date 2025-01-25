@@ -6,7 +6,7 @@ import { CardsComponent } from '../cards/cards.component';
 import { listComponent } from '../list/list.component';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { UserBookingsComponent } from '../user-bookings/user-bookings.component';
-
+import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.component';
 @Component({
   selector: 'app-changing-section',
   standalone: true,
@@ -18,6 +18,7 @@ import { UserBookingsComponent } from '../user-bookings/user-bookings.component'
     CardsComponent,
     listComponent,
     UserBookingsComponent,
+    DoctorBookingsComponent,
   ],
   template: `
     <div *ngIf="showRegistration">
@@ -55,6 +56,11 @@ import { UserBookingsComponent } from '../user-bookings/user-bookings.component'
       <app-list></app-list>
 
       <app-user-bookings></app-user-bookings>
+    </div>
+    <div class="list-card-wrapper" *ngIf="currentRoute === '/doctorbookings'">
+      <app-list></app-list>
+
+      <app-doctor-bookings></app-doctor-bookings>
     </div>
   `,
   styleUrls: ['./changing-section.component.css'],

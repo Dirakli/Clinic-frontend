@@ -10,5 +10,6 @@ export const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'registration-doctor', component: RegistrationDoctorComponent },
   { path: 'administration-doctor', component: AdministrationComponent },
-  { path: 'userbookings', component: ChangingSectionComponent }, // Add this route for user bookings
+  { path: 'userbookings', component: ChangingSectionComponent },
+  { path: 'doctorbookings', component: ChangingSectionComponent },
 ];
