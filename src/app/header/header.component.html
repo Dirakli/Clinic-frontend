@@ -1,0 +1,30 @@
+<div class="header">
+  <div class="title-wrapper">
+    <img src="./assets/logo.svg" alt="logo" />
+    <h1 (click)="reloadPage()" class="title">კლინიკა</h1>
+  </div>
+  <nav>
+    <ul>
+      <li class="nav-list">
+        <a routerLink="/">ექიმები</a>
+        <a href="">კლინიკები</a>
+        <a href="">ანოტაციები</a>
+        <a href="">აქციები</a>
+        <a href="">სერვისები</a>
+        <a href="">მედიკამენტები</a>
+        <a href="">კონტაქტი</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="autorization">
+    <button (click)="showAuthentication()">ავოტრიზაცია</button>
+    <span> / </span>
+    <button routerLink="/register" (click)="showRegistration()">
+      რეგისტრაცია
+    </button>
+  </div>
+  <button class="language">
+    <span>ENG</span>
+  </button>
+</div>

@@ -1,22 +1,14 @@
 import { Component } from '@angular/core';
-import { NgIf, NgFor } from '@angular/common'; // Angular common directives
-import { CardDetailComponent } from '../card-detail/card-detail.component'; // Adjust this path if necessary
-import { UserBookingsComponent } from '../user-bookings/user-bookings.component'; // Adjust path
-import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.component'; // Adjust path
+import { NgIf, NgFor } from '@angular/common';
+import { CardDetailComponent } from '../card-detail/card-detail.component';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [
-    NgIf, // For *ngIf directive
-    NgFor, // For *ngFor directive
-    CardDetailComponent, // Standalone component
-    UserBookingsComponent, // Standalone component
-    DoctorBookingsComponent, // Standalone component
-  ],
-  templateUrl: './cards.component.html', // Corrected template file path
-  styleUrls: ['./cards.component.css'], // Corrected styles file path
+  imports: [NgIf, NgFor, CardDetailComponent],
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.css'],
 })
 export class CardsComponent {
   starsArray = Array(5);
@@ -42,12 +34,12 @@ export class CardsComponent {
     },
   ];
 
-  selectedCard: any = null; // To store the clicked card details
+  selectedCard: any = null;
   card: any;
 
   // Function to handle clicking on a card
   viewCardDetails(card: any) {
-    this.selectedCard = card; // Store clicked card details
+    this.selectedCard = card;
   }
 
   // Function to go back to the card list
@@ -56,7 +48,7 @@ export class CardsComponent {
 
   goBack() {
     console.log('CardsComponent goBack called');
-    this.selectedCard = null; // Clear selected card
-    this.cdr.detectChanges(); // Trigger change detection manually
+    this.selectedCard = null;
+    this.cdr.detectChanges();
   }
 }

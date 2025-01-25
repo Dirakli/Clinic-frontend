@@ -29,7 +29,6 @@ export class AppComponent {
   showRegistration = false;
   showAuthentication = false;
 
-  // Updated to handle events from HeaderComponent
   onRegistration(isRegistrationShown: boolean) {
     this.showRegistration = isRegistrationShown;
   }

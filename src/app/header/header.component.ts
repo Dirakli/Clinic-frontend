@@ -1,42 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [RouterLink],
-
-  template: `
-    <div class="header">
-      <div class="title-wrapper">
-        <img src="./assets/logo.svg" alt="logo" />
-        <h1 routerLink="/" class="title">კლინიკა</h1>
-      </div>
-      <nav>
-        <ul>
-          <li class="nav-list">
-            <a routerLink="/">ექიმები</a>
-            <a href="">კლინიკები</a>
-            <a href="">ანოტაციები</a>
-            <a href="">აქციები</a>
-            <a href="">სერვისები</a>
-            <a href="">მედიკამენტები</a>
-            <a href="">კონტაქტი</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="autorization">
-        <button (click)="showAuthentication()">ავოტრიზაცია</button>
-        <span> / </span>
-        <button routerLink="/register" (click)="showRegistration()">
-          რეგისტრაცია
-        </button>
-      </div>
-      <button class="language">
-        <span>ENG</span>
-      </button>
-    </div>
-  `,
+  templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
@@ -49,5 +17,9 @@ export class HeaderComponent {
 
   showAuthentication() {
     this.showAuthenticationChange.emit(true);
+  }
+
+  reloadPage() {
+    window.location.href = '/'; // This navigates to the root and reloads the page.
   }
 }

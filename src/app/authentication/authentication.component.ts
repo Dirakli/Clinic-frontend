@@ -12,51 +12,7 @@ import {
   selector: 'app-authentication',
   standalone: true,
   imports: [NgIf, ReactiveFormsModule],
-  template: `
-    <div *ngIf="isVisible" class="overlay">
-      <div class="auth-modal">
-        <h1>ავტორიზაცია</h1>
-        <form [formGroup]="authForm" (ngSubmit)="onSignIn()">
-          <input
-            type="text"
-            formControlName="email"
-            placeholder="ელ. ფოსტა/ ტელეფონის ნომერი"
-          />
-          <div
-            class="warning"
-            *ngIf="
-              authForm.get('email')?.invalid && authForm.get('email')?.touched
-            "
-          >
-            *გთხოვთ, მიუთითოთ მეილი ან ტელეფონის ნომერი
-          </div>
-
-          <input
-            type="password"
-            class="second-input"
-            formControlName="password"
-            placeholder="პაროლი"
-          />
-          <div
-            class="warning"
-            *ngIf="
-              authForm.get('password')?.invalid &&
-              authForm.get('password')?.touched
-            "
-          >
-            *გთხოვთ, მიუთითოთ პაროლი
-          </div>
-
-          <button type="button" class="recover-password">
-            პაროლის აღდგენა
-          </button>
-          <button type="submit" class="sign-in" [disabled]="authForm.invalid">
-            შესვლა
-          </button>
-        </form>
-      </div>
-    </div>
-  `,
+  templateUrl: './authentication.component.html',
   styleUrls: ['./authentication.component.css'],
 })
 export class AuthenticationComponent {
