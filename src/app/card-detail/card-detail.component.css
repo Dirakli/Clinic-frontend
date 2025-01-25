@@ -212,6 +212,14 @@ span {
   color: #0533544d;
 }
 
+.book-text {
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #0533544d;
+}
+
 .cube:hover {
   background-color: #e6f7ff;
 }
@@ -400,4 +408,9 @@ span {
   background-color: transparent;
   margin-top: 73px;
   margin-left: 62px;
+}
+
+.close-btn {
+  width: 5px;
+  height: 5px;
 }

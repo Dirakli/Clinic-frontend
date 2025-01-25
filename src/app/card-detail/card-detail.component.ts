@@ -1,9 +1,9 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-card-detail',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, NgClass],
   template: `
     <button class="goback" (click)="goBack()">უკან დაბრუნება</button>
 
@@ -96,7 +96,22 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                 <p class="TextSecond">ავტორიზაცია ან რეგისტრაცია.</p>
               </div>
             </div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube" [ngClass]="{ booked: isBooked }">
+              <span *ngIf="!isBooked" class="plus" (click)="toggleBooking()"
+                >+ <span class="book-text">დაჯავშნა</span>
+              </span>
+              <span *ngIf="isBooked" class="booking-text">{{
+                bookingText
+              }}</span>
+              <button
+                *ngIf="isBooked"
+                class="close-btn"
+                (click)="cancelBooking($event)"
+              >
+                X
+              </button>
+            </div>
+
             <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
             <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
             <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
@@ -224,18 +239,18 @@ export class CardDetailComponent {
   /* new codesss */
 
   months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'იანვარი', // January
+    'თებერვალი', // February
+    'მარტი', // March
+    'აპრილი', // April
+    'მაისი', // May
+    'ივნისი', // June
+    'ივლისი', // July
+    'აგვისტო', // August
+    'სექტემბერი', // September
+    'ოქტომბერი', // October
+    'ნოემბერი', // November
+    'დეკემბერი', // December
   ];
   weekdays = ['კვირა', 'ორშ ', 'სამ ', 'ოთხ ', 'ხუთ ', 'პარ', 'შაბ'];
 
@@ -339,5 +354,18 @@ export class CardDetailComponent {
       this.currentDayOffset -= 7;
       this.updateDays(); // Update the displayed days
     }
+  }
+  isBooked = false; // Track if booking is made
+  bookingText = 'ჩემი ჯავშანი'; // Default booking text
+
+  // Toggles the booking state
+  toggleBooking() {
+    this.isBooked = !this.isBooked;
+  }
+
+  // Cancels the booking (Resets to default state)
+  cancelBooking(event: Event) {
+    event.stopPropagation(); // Prevent triggering the parent div's click event
+    this.isBooked = false; // Reset to default state
   }
 }
