@@ -4,11 +4,18 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { ChangingSectionComponent } from './changing-section/changing-section.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, FooterComponent, SearchbarComponent],
+  imports: [
+    RouterModule,
+    HeaderComponent,
+    FooterComponent,
+    SearchbarComponent,
+    ChangingSectionComponent,
+  ],
   template: `
     <div class="wrapper">
       <header>
@@ -18,8 +25,12 @@ import { AuthenticationComponent } from './authentication/authentication.compone
       </header>
       <app-searchbar></app-searchbar>
 
-      <router-outlet></router-outlet>
-      <app-footer></app-footer>
+      <div class="content">
+        <div>
+          <router-outlet> </router-outlet>
+        </div>
+        <app-footer></app-footer>
+      </div>
     </div>
   `,
   styleUrls: ['./app.component.css'],

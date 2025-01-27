@@ -26,6 +26,7 @@ import { DoctorBookingsComponent } from '../doctor-bookings/doctor-bookings.comp
 export class ChangingSectionComponent {
   @Input() showRegistration = false;
   @Input() showAuthentication = false;
+  @Input() selectedCard = false;
   currentRoute: string = '';
 
   constructor(private route: ActivatedRoute, private router: Router) {}
@@ -45,6 +46,7 @@ export class ChangingSectionComponent {
     this.route.data.subscribe((data) => {
       this.showRegistration = data['showRegistration'] || false;
       this.showAuthentication = data['showAuthentication'] || false;
+      this.selectedCard = data['selectedCard'] || false;
     });
   }
 }

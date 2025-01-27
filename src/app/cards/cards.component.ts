@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, output } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import { CardDetailComponent } from '../card-detail/card-detail.component';
 import { ChangeDetectorRef } from '@angular/core';
@@ -34,7 +34,7 @@ export class CardsComponent {
     },
   ];
 
-  selectedCard: any = null;
+  @Output() selectedCard: any = null;
   card: any;
 
   // Function to handle clicking on a card
