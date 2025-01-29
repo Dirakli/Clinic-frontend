@@ -32,10 +32,8 @@ export class ChangingSectionComponent {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    // Set initial route
     this.currentRoute = this.router.url;
 
-    // Listen to route changes and update the currentRoute accordingly
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.urlAfterRedirects;

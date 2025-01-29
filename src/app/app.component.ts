@@ -3,24 +3,18 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { ChangingSectionComponent } from './changing-section/changing-section.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterModule,
-    HeaderComponent,
-    FooterComponent,
-    SearchbarComponent,
-    ChangingSectionComponent,
-  ],
+  imports: [RouterModule, HeaderComponent, FooterComponent, SearchbarComponent],
   template: `
     <div class="wrapper">
       <header>
         <app-header
           (showAuthenticationChange)="showAuthentication = $event"
+          [showText]="showText"
+          (showTextChange)="onShowText($event)"
         ></app-header>
       </header>
       <app-searchbar></app-searchbar>
@@ -39,6 +33,7 @@ export class AppComponent {
   title = 'clinic-frontend';
   showRegistration = false;
   showAuthentication = false;
+  showText = false;
 
   onRegistration(isRegistrationShown: boolean) {
     this.showRegistration = isRegistrationShown;
@@ -46,5 +41,9 @@ export class AppComponent {
 
   onAuthentication(isAuthenticationShown: boolean) {
     this.showAuthentication = isAuthenticationShown;
+  }
+
+  onShowText(isTextShown: boolean) {
+    this.showText = isTextShown;
   }
 }

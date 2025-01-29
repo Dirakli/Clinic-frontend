@@ -89,7 +89,13 @@
           </div>
           <div class="attention" *ngIf="showAttention">
             <p class="redText">დასაჯავშნად გთხოვთ გაიაროთ</p>
-            <p class="TextSecond">ავტორიზაცია ან რეგისტრაცია.</p>
+            <p class="TextSecond">
+              <span class="TextSecond">ავტორიზაცია</span>
+              ან
+              <span class="TextSecond" routerLink="/register"
+                >რეგისტრაცია.</span
+              >
+            </p>
           </div>
         </div>
         <div class="cube" [ngClass]="{ booked: isBooked }">

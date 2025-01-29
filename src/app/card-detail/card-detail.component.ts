@@ -1,9 +1,10 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-card-detail',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass],
+  imports: [NgFor, NgIf, NgClass, RouterLink],
   templateUrl: './card-detail.component.html',
   styleUrls: ['./card-detail.component.css'],
 })

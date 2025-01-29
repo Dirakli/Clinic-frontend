@@ -16,9 +16,10 @@
       </li>
     </ul>
   </nav>
-
+  <!-- <div *ngIf="showText"><app-authentication></app-authentication></div> -->
+  <div *ngIf="showText">Hello world</div>
   <div class="autorization">
-    <button (click)="showAuthentication()">ავოტრიზაცია</button>
+    <button (click)="showTextfu()">ავოტრიზაცია</button>
     <span> / </span>
     <button routerLink="/register" (click)="showRegistration()">
       რეგისტრაცია

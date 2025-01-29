@@ -1,15 +1,11 @@
 <div *ngIf="showRegistration">
   <app-registration></app-registration>
 </div>
-<div>
+<!-- <div>
   <app-authentication></app-authentication>
-</div>
+</div> -->
 <div
-  *ngIf="
-    selectedCard === null &&
-    !showRegistration &&
-    currentRoute !== '/userbookings'
-  "
+  *ngIf="!showRegistration && currentRoute !== '/userbookings'"
   class="wrapper"
   [ngStyle]="{ 'background-image': 'url(/assets/background.svg)' }"
 >
