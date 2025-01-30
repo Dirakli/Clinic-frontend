@@ -5,7 +5,11 @@
   <app-authentication></app-authentication>
 </div> -->
 <div
-  *ngIf="!showRegistration && currentRoute !== '/userbookings'"
+  *ngIf="
+    !showRegistration &&
+    currentRoute !== '/userbookings' &&
+    currentRoute !== '/doctorbookings'
+  "
   class="wrapper"
   [ngStyle]="{ 'background-image': 'url(/assets/background.svg)' }"
 >

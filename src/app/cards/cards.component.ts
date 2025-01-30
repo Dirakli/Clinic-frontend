@@ -15,22 +15,50 @@ export class CardsComponent {
 
   cardsArray = [
     {
-      name: 'გიორგი ხორავა',
-      position: 'კარდიოლოგი / არითმოლოგი',
-      views: '129 371',
-      avatar: '/assets/profile-picture.svg',
+      category: 'pinned',
+      data: [
+        {
+          name: 'გიორგი ხორავა',
+          position: 'კარდიოლოგი / არითმოლოგი',
+          views: '129 371',
+          avatar: '/assets/profile-picture.svg',
+        },
+        {
+          name: 'ნატალია გოგოხია',
+          position: 'ბავშვთა და მოზრდილთა კარდიოლოგი',
+          views: '129 371',
+          avatar: '/assets/natalia.svg',
+        },
+        {
+          name: 'ანა დვალი',
+          position: 'კარდიოქირურგი',
+          views: '129 371',
+          avatar: '/assets/ana.svg',
+        },
+      ],
     },
     {
-      name: 'მარიამ თავაძე',
-      position: 'ქირურგი',
-      views: '98 562',
-      avatar: '/assets/profile-picture.svg',
-    },
-    {
-      name: 'ზაზა ჯოხაძე',
-      position: 'ორთოპედი',
-      views: '76 482',
-      avatar: '/assets/profile-picture.svg',
+      category: 'unpinned',
+      data: [
+        {
+          name: 'გიორგი გაბიტაშვილი',
+          position: 'კარდიოლოგი / არითმოლოგი',
+          views: '129 371',
+          avatar: '/assets/giorgi.svg',
+        },
+        {
+          name: 'ბარბარე ქორთუა',
+          position: 'კარდიოქირურგი',
+          views: '129 371',
+          avatar: '/assets/barbare.svg',
+        },
+        {
+          name: 'სოფია გოგიაშვილი',
+          position: 'ბავშვთა და მოზრდილთა კარდიოლოგი',
+          views: '129 371',
+          avatar: '/assets/sofia.svg',
+        },
+      ],
     },
   ];
 

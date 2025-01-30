@@ -1,7 +1,7 @@
 <div *ngIf="!selectedCard" class="cards">
   <div
     class="card-wrapper"
-    *ngFor="let card of cardsArray"
+    *ngFor="let card of cardsArray[0].data"
     (click)="viewCardDetails(card)"
   >
     <div class="card">
@@ -32,7 +32,7 @@
 <div class="cards unpin" *ngIf="!selectedCard">
   <div
     class="card-wrapper"
-    *ngFor="let card of cardsArray"
+    *ngFor="let card of cardsArray[1].data"
     (click)="viewCardDetails(card)"
   >
     <div class="card unpin-card">

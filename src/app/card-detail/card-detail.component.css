@@ -45,6 +45,15 @@ span {
   margin-top: 23px;
 }
 
+.position-name {
+  color: #0533544d;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-top: 17px;
+}
+
 .position-one,
 .position-two,
 .position-three {
@@ -213,6 +222,8 @@ span {
   font-size: 14px;
   line-height: 16.8px;
   color: #0533544d;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 .book-text {
@@ -414,6 +425,62 @@ span {
 }
 
 .close-btn {
+  width: 16px;
+  height: 15px;
+  padding: 6px;
+  padding-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.x-btn {
   width: 5px;
   height: 5px;
+}
+
+.green-box {
+  background-color: #dafaee;
+  border: 1px solid #ecf2f8;
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #0533544d;
+}
+
+.booking-text {
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #3acf99;
+  text-align: center;
+}
+
+.red {
+  background-color: #ff93a6;
+  border-radius: 5px;
+  border: 1px solid #ecf2f8;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #0533544d;
+  padding-left: 7px;
+  padding-right: 7px;
 }

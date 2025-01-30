@@ -4,7 +4,7 @@
   <img class="avatar" [src]="selectedCard?.avatar" alt="profile picture" />
   <div class="info-wrapper">
     <h3 class="doctor-name">{{ selectedCard?.name }}</h3>
-    <p class="position">{{ selectedCard?.position }}</p>
+    <p class="position-name">{{ selectedCard?.position }}</p>
     <div class="stars">
       <img
         *ngFor="let star of starsArray"
@@ -98,7 +98,7 @@
             </p>
           </div>
         </div>
-        <div class="cube" [ngClass]="{ booked: isBooked }">
+        <div class="cube" [ngClass]="{ 'green-box': isBooked, cube: true }">
           <span *ngIf="!isBooked" class="plus" (click)="toggleBooking()"
             >+ <span class="book-text">დაჯავშნა</span>
           </span>
@@ -108,7 +108,7 @@
             class="close-btn"
             (click)="cancelBooking($event)"
           >
-            X
+            <img src="/assets/red-btn.svg" alt="red button" />
           </button>
         </div>
 
@@ -122,7 +122,7 @@
       </div>
 
       <div class="time-slots">
-        <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+        <div class="cube red"><span class="plus"></span></div>
         <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
         <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
         <div class="cube"><span class="plus">+</span> დაჯავშნა</div>

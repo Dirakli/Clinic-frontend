@@ -140,7 +140,7 @@
   background-color: #ecf2f8;
   border-radius: 50px;
   border: none;
-  color: #18a4e1;
+  color: #0533540d;
   font-family: "FiraGO", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -148,6 +148,7 @@
   width: 230px;
   height: 50px;
   margin-left: 30px;
+  cursor: pointer;
 }
 
 .dlt {
@@ -180,6 +181,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 21.6px;
+  cursor: pointer;
 }
 
 .calendar {
@@ -358,7 +360,7 @@
   flex-direction: column;
 }
 
-.edit {
+/* .edit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -372,7 +374,7 @@
   line-height: 21.6px;
   width: 230px;
   height: 50px;
-}
+} */
 
 .dlt {
   display: flex;
