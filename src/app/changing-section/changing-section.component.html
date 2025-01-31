@@ -1,9 +1,9 @@
 <div *ngIf="showRegistration">
   <app-registration></app-registration>
 </div>
-<!-- <div>
+<div *ngIf="!showAuthentication">
   <app-authentication></app-authentication>
-</div> -->
+</div>
 <div
   *ngIf="
     !showRegistration &&
