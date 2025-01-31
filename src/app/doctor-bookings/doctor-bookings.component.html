@@ -27,6 +27,7 @@
     <div class="calendar">
       <div class="year-button-wrapper">
         <span class="year">2023</span>
+
         <div class="arrows-button">
           <button (click)="goToPreviousMonth()" class="leftarrow-button">
             <img src="/assets/leftarrow.svg" alt="left arrow" />
@@ -40,22 +41,21 @@
       <div class="divider">
         <div class="calendar-box">
           <div class="header empty">
-            <div class="left-click-arrow">
+            <div class="left-click-arrow" (click)="navigateLeft()">
               <img src="/assets/left.svg" alt="left arrow" />
             </div>
-            <div class="right-click-arrow">
+            <div class="right-click-arrow" (click)="navigateRight()">
               <img src="/assets/right.svg" alt="right arrow" />
             </div>
           </div>
 
           <div class="weekdays">
-            <div><span>17</span> ( ორშ )</div>
-            <div><span>18</span> ( სამ )</div>
-            <div><span>19</span> ( ოთხ )</div>
-            <div><span>20</span> ( ხუთ )</div>
-            <div><span>21</span> ( პარ )</div>
-            <div><span>22</span> ( შაბ )</div>
-            <div><span>23</span> ( კვი )</div>
+            <div *ngFor="let day of getCurrentDays(); let i = index">
+              <span class="weekday-number" *ngIf="day !== null">
+                {{ day }}
+                <span class="weekday-name">({{ weekdays[i % 7] }})</span>
+              </span>
+            </div>
           </div>
 
           <div class="time-column">
@@ -71,87 +71,129 @@
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube green-box">
+              <span class="booked">დაჯავშნილია</span>
+            </div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
         </div>
         <div class="buttons-wrapper">

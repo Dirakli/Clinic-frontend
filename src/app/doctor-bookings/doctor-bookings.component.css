@@ -197,14 +197,6 @@
   line-height: 16.8px;
 }
 
-.weekdays div span {
-  color: #18a4e1;
-  font-family: "FiraGO", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16.8px;
-}
-
 .empty {
   background-color: #ecf2f8;
   border: none;
@@ -251,15 +243,6 @@
 
 .cube:hover {
   background-color: #e6f7ff;
-}
-
-.plus {
-  color: green;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.8px;
-  font-family: "FiraGO", sans-serif;
-  margin-right: 5px;
 }
 
 .divider {
@@ -374,4 +357,34 @@
 
 .stars {
   margin-top: 5px;
+}
+
+.booked {
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: #3acf99;
+}
+
+.green-box {
+  background-color: #dafaee;
+  border-radius: 5px;
+  border: none;
+}
+
+.weekday-name {
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+.weekday-number {
+  color: #18a4e1;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.8px;
 }

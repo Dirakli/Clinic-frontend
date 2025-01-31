@@ -226,6 +226,10 @@ span {
   padding-right: 7px;
 }
 
+.green-cube:hover {
+  background-color: #dafaee;
+}
+
 .book-text {
   font-family: "FiraGO", sans-serif;
   font-weight: 400;
@@ -239,7 +243,7 @@ span {
 }
 
 .plus {
-  color: green;
+  color: rgb(0, 235, 0);
   font-weight: 400;
   font-size: 14px;
   line-height: 16.8px;
@@ -443,7 +447,6 @@ span {
 }
 
 .green-box {
-  background-color: #dafaee;
   border: 1px solid #ecf2f8;
   border-radius: 5px;
   height: 50px;
@@ -470,7 +473,7 @@ span {
 .red {
   background-color: #ff93a6;
   border-radius: 5px;
-  border: 1px solid #ecf2f8;
+  border: none;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -483,4 +486,11 @@ span {
   color: #0533544d;
   padding-left: 7px;
   padding-right: 7px;
+}
+
+.cancel {
+  background-color: #fff1f4;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }

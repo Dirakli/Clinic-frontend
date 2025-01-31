@@ -140,7 +140,7 @@
   background-color: #ecf2f8;
   border-radius: 50px;
   border: none;
-  color: #0533540d;
+  color: #18a4e1;
   font-family: "FiraGO", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -290,7 +290,15 @@
   line-height: 16.8px;
 }
 
-.weekdays div span {
+.weekday-name {
+  color: #053354;
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+.weekday-number {
   color: #18a4e1;
   font-family: "FiraGO", sans-serif;
   font-weight: 500;
@@ -470,4 +478,18 @@
 
 .container {
   display: flex;
+}
+
+.booked {
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: #3acf99;
+}
+
+.green-box {
+  background-color: #dafaee;
+  border-radius: 5px;
+  border: none;
 }

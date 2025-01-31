@@ -154,6 +154,6 @@ export class CardDetailComponent {
   // Cancels the booking (Resets to default state)
   cancelBooking(event: Event) {
     event.stopPropagation();
-    this.isBooked = false;
+    this.isBooked = true;
   }
 }

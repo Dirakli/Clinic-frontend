@@ -35,22 +35,21 @@
       <div class="divider">
         <div class="calendar-box">
           <div class="header empty">
-            <div class="left-click-arrow">
+            <div class="left-click-arrow" (click)="navigateLeft()">
               <img src="/assets/left.svg" alt="left arrow" />
             </div>
-            <div class="right-click-arrow">
+            <div class="right-click-arrow" (click)="navigateRight()">
               <img src="/assets/right.svg" alt="right arrow" />
             </div>
           </div>
 
           <div class="weekdays">
-            <div><span>17</span> ( ორშ )</div>
-            <div><span>18</span> ( სამ )</div>
-            <div><span>19</span> ( ოთხ )</div>
-            <div><span>20</span> ( ხუთ )</div>
-            <div><span>21</span> ( პარ )</div>
-            <div><span>22</span> ( შაბ )</div>
-            <div><span>23</span> ( კვი )</div>
+            <div *ngFor="let day of getCurrentDays(); let i = index">
+              <span class="weekday-number" *ngIf="day !== null">
+                {{ day }}
+                <span class="weekday-name">({{ weekdays[i % 7] }})</span>
+              </span>
+            </div>
           </div>
 
           <div class="time-column">
@@ -66,103 +65,157 @@
           </div>
 
           <div class="time-slots">
-            <div (click)="onInput(!showInput)" class="cube">
-              <span class="plus">+</span> დაჯავშნა
+            <div
+              class="cube green-cube"
+              [ngClass]="{ 'green-box': isBooked, cube: true }"
+            >
+              <span *ngIf="isBooked" class="plus" (click)="toggleBooking()"
+                >+ <span class="book-text">დაჯავშნა</span>
+              </span>
+              <span *ngIf="!isBooked" class="booking-text">{{
+                bookingText
+              }}</span>
+              <button
+                *ngIf="!isBooked"
+                class="close-btn"
+                (click)="cancelBooking($event)"
+              >
+                <img src="/assets/red-btn.svg" alt="red button" />
+              </button>
             </div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <!-- <div (click)="onInput(!showInput)" class="cube">
+              <span class="plus"></span>
+              <div
+                (click)="onBook(!showAttention)"
+                class="inputDescription"
+                *ngIf="showInput"
+              >
+                <p class="greenText">გსურთ ვიზიტის ?</p>
+                <p class="text">შეგიძლიათ მიუთუთოთ თქვენი პრობლემა</p>
+                <input placeholder="აღწერა..." type="text" class="descInput" />
+                <button class="buttonBook">დაჯავშნა</button>
+              </div>
+              <div class="attention" *ngIf="showAttention">
+                <p class="redText">დასაჯავშნად გთხოვთ გაიაროთ</p>
+                <p class="TextSecond">
+                  <span class="TextSecond">ავტორიზაცია</span>
+                  ან
+                  <span class="TextSecond" routerLink="/register"
+                    >რეგისტრაცია.</span
+                  >
+                </p>
+              </div>
+            </div> -->
+            <div class="cube"><span class="plus"></span></div>
+
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div
+              class="cube green-cube"
+              [ngClass]="{ 'green-box': isBooked, cube: true }"
+            >
+              <span *ngIf="isBooked" class="plus" (click)="toggleBooking()"
+                >+ <span class="book-text">დაჯავშნა</span>
+              </span>
+              <span *ngIf="!isBooked" class="booking-text">{{
+                bookingText
+              }}</span>
+              <button
+                *ngIf="!isBooked"
+                class="close-btn"
+                (click)="cancelBooking($event)"
+              >
+                <img src="/assets/red-btn.svg" alt="red button" />
+              </button>
+            </div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
 
           <div class="time-slots">
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
-            <div class="cube"><span class="plus">+</span> დაჯავშნა</div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
+            <div class="cube"><span class="plus"></span></div>
           </div>
         </div>
+
         <div class="buttons-wrapper">
-          <div class="container-edit-information">
-            <button class="edit">
-              <img
-                class="image-edit"
-                src=" ./assets/book-edit.svg "
-                alt="booking edit icon"
-              />
-              რედაქტირება
-            </button>
-            <p class="description-edit">*აღწერის ცვლილება</p>
-          </div>
+          <button class="edit">
+            <img
+              class="image-edit"
+              src=" ./assets/book-edit.svg "
+              alt="booking edit icon"
+            />
+            რედაქტირება
+          </button>
           <button class="dlt">
             <img
               class="image-dlt"
