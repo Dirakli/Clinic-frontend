@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-administration-categories',
@@ -8,6 +8,10 @@ import { NgFor } from '@angular/common';
   styleUrl: './administration-categories.component.css',
 })
 export class AdministrationCategoriesComponent {
+  @Output() backToAdmin = new EventEmitter<void>();
+  goBack() {
+    this.backToAdmin.emit();
+  }
   users = [
     {
       firstName: 'გიორგი ხორავა',

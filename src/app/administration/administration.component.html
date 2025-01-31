@@ -7,7 +7,7 @@
         <div class="third-line"></div>
       </div>
       <p class="registration">რეგისტრაცია</p>
-      <p class="categories" (click)="onCategories(!categories)">კატეგორიები</p>
+      <p class="categories" (click)="onCategories(true)">კატეგორიები</p>
       <p class="changing-sections">ექიმები</p>
     </div>
     <div class="additional-section">
@@ -20,5 +20,6 @@
   <app-administration-doctor *ngIf="!categories"></app-administration-doctor>
   <app-administration-categories
     *ngIf="categories"
+    (backToAdmin)="onCategories(false)"
   ></app-administration-categories>
 </div>
